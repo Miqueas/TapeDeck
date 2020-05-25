@@ -1,4 +1,4 @@
-# LPlayer
+# MoonPlayer
 
 Yes, this is another sh*t GTK+ music player
 
@@ -6,6 +6,6 @@ Yes, this is another sh*t GTK+ music player
 
 Yes.
 
-## Who?
+## How?
 
 GStreamer.
