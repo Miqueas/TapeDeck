@@ -10,14 +10,12 @@ log(builder:add_from_file("MoonPlayer.ui"), 'err', "Hubo un error al cargar la i
 
 local ui = builder.objects
 
-function ui.appBtnConfig:on_clicked()
-  ui.configDialog:show()
+function ui.menu_preferences:on_clicked()
   ui.configDialog:run()
   ui.configDialog:hide()
 end
 
-function ui.configDialogBtnAbout:on_clicked()
-  ui.aboutDialog:show()
+function ui.menu_about:on_clicked()
   ui.aboutDialog:run()
   ui.aboutDialog:hide()
 end
