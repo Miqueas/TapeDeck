@@ -10,29 +10,21 @@ log(builder:add_from_file("MoonPlayer.ui"), 'err', "Hubo un error al cargar la i
 
 local ui = builder.objects
 
-function app:on_startup( ... )
-  log(nil, 'info', "Iniciando interfaz")
+function ui.appBtnConfig:on_clicked()
+  ui.configDialog:show()
+  ui.configDialog:run()
+  ui.configDialog:hide()
+end
+
+function ui.configDialogBtnAbout:on_clicked()
+  ui.aboutDialog:show()
+  ui.aboutDialog:run()
+  ui.aboutDialog:hide()
 end
 
 function app:on_activate()
-  log(nil, 'info', "Interfaz inicializada")
-
-  function ui.appBtnConfig:on_clicked()
-    ui.aboutDialog:run()
-    ui.aboutDialog:hide()
-  end
-
   ui.appWindow:show_all()
   self:add_window(ui.appWindow)
-end
-
-function app:on_window_added()
-  log(nil, 'info', "Añadida ventana principal")
-end
-
-function app:on_shutdown()
-  log(nil, 'info', "Destruida la interfaz")
-  log(nil, 'info', "Finalizada la sesión")
 end
 
 app:run()
