@@ -5,9 +5,16 @@
   <!-- interface-css-provider-path styles.css -->
   <object class="GtkAboutDialog" id="aboutDialog">
     <property name="can_focus">False</property>
+    <property name="resizable">False</property>
     <property name="type_hint">dialog</property>
     <property name="program_name">LPlayer</property>
+    <property name="version">v0.1.0</property>
+    <property name="copyright" translatable="yes">Copyright (c) 2020 LPlayer</property>
+    <property name="authors">Miqueas Martinez</property>
+    <property name="documenters">Miqueas Martinez</property>
+    <property name="translator_credits" translatable="yes">Miqueas Martinez</property>
     <property name="logo_icon_name">image-missing</property>
+    <property name="license_type">mit-x11</property>
     <child internal-child="vbox">
       <object class="GtkBox" id="aboutDialogBox">
         <property name="can_focus">False</property>
@@ -34,127 +41,6 @@
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="show_close_button">True</property>
-      </object>
-    </child>
-  </object>
-  <object class="GtkImage" id="configDialogIconCancel">
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="icon_name">dialog-cancel</property>
-  </object>
-  <object class="GtkImage" id="configDialogIconOk">
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="icon_name">dialog-ok</property>
-  </object>
-  <object class="GtkDialog" id="configDialog">
-    <property name="can_focus">False</property>
-    <property name="resizable">False</property>
-    <property name="type_hint">dialog</property>
-    <child internal-child="vbox">
-      <object class="GtkBox" id="configDialogBox">
-        <property name="can_focus">False</property>
-        <property name="orientation">vertical</property>
-        <property name="spacing">2</property>
-        <child internal-child="action_area">
-          <object class="GtkButtonBox" id="configDialogBtnBox">
-            <property name="can_focus">False</property>
-            <property name="layout_style">end</property>
-            <child>
-              <object class="GtkButton" id="configDialogBtnOk">
-                <property name="label" translatable="yes">Aceptar</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">True</property>
-                <property name="image">configDialogIconOk</property>
-              </object>
-              <packing>
-                <property name="expand">True</property>
-                <property name="fill">True</property>
-                <property name="position">0</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkButton" id="configDialogBtnCancel">
-                <property name="label" translatable="yes">Cancelar</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">True</property>
-                <property name="image">configDialogIconCancel</property>
-              </object>
-              <packing>
-                <property name="expand">True</property>
-                <property name="fill">True</property>
-                <property name="position">1</property>
-              </packing>
-            </child>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">False</property>
-            <property name="position">0</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkBox" id="configDialogContainer">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <child>
-              <object class="GtkLabel" id="configDialogLabelLibrary">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="label" translatable="yes">Biblioteca de música:</property>
-              </object>
-              <packing>
-                <property name="expand">True</property>
-                <property name="fill">True</property>
-                <property name="padding">10</property>
-                <property name="position">0</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkFileChooserButton" id="configDialogPathBtn">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="action">select-folder</property>
-                <property name="title" translatable="yes"/>
-              </object>
-              <packing>
-                <property name="expand">True</property>
-                <property name="fill">True</property>
-                <property name="padding">10</property>
-                <property name="position">1</property>
-              </packing>
-            </child>
-          </object>
-          <packing>
-            <property name="expand">True</property>
-            <property name="fill">True</property>
-            <property name="position">1</property>
-          </packing>
-        </child>
-      </object>
-    </child>
-    <child type="titlebar">
-      <object class="GtkHeaderBar" id="configDialogHeader">
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="title" translatable="yes">Preferencias</property>
-        <property name="show_close_button">True</property>
-        <child>
-          <object class="GtkButton" id="configDialogAboutBtn">
-            <property name="visible">True</property>
-            <property name="can_focus">True</property>
-            <property name="receives_default">True</property>
-            <child>
-              <object class="GtkImage" id="configDialogAboutIcon">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="icon_name">dialog-information</property>
-              </object>
-            </child>
-          </object>
-        </child>
       </object>
     </child>
   </object>
@@ -526,13 +412,22 @@
           </packing>
         </child>
         <child>
+          <object class="GtkImage" id="appCoverImg">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="pixbuf">resources/cover.svg</property>
+          </object>
+          <packing>
+            <property name="position">4</property>
+          </packing>
+        </child>
+        <child>
           <object class="GtkButton" id="appBtnConfig">
-            <property name="name">btnConfig</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
             <child>
-              <object class="GtkImage" id="appBtnIconConfig">
+              <object class="GtkImage">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="icon_name">preferences-other</property>
@@ -541,7 +436,25 @@
           </object>
           <packing>
             <property name="pack_type">end</property>
-            <property name="position">4</property>
+            <property name="position">5</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="appBtnVol">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <child>
+              <object class="GtkImage">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="icon_name">audio-volume-high</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="pack_type">end</property>
+            <property name="position">6</property>
           </packing>
         </child>
       </object>
