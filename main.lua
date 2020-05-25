@@ -18,7 +18,8 @@ function app:on_activate()
   log(nil, 'info', "Interfaz inicializada")
 
   function ui.appBtnConfig:on_clicked()
-    ui.aboutDialog:show()
+    ui.aboutDialog:run()
+    ui.aboutDialog:hide()
   end
 
   ui.appWindow:show_all()
