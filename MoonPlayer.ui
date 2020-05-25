@@ -6,13 +6,25 @@
   <object class="GtkAboutDialog" id="aboutDialog">
     <property name="can_focus">False</property>
     <property name="resizable">False</property>
+    <property name="window_position">center</property>
     <property name="type_hint">dialog</property>
-    <property name="program_name">LPlayer</property>
+    <property name="program_name">MoonPlayer</property>
     <property name="version">v0.1.0</property>
-    <property name="copyright" translatable="yes">Copyright (c) 2020 LPlayer</property>
-    <property name="authors">Miqueas Martinez</property>
-    <property name="documenters">Miqueas Martinez</property>
-    <property name="translator_credits" translatable="yes">Miqueas Martinez</property>
+    <property name="copyright" translatable="yes">Copyright (C) 2020 MoonPlayer</property>
+    <property name="comments" translatable="yes">Otro reproductor de música con GTK+ y GStreamer más. Un proyecto del equipo Moonsteal.</property>
+    <property name="website">https://github.com/M1que4s/moonplayer</property>
+    <property name="authors">Miqueas Martinez
+Victor Diaz
+Dario Lopez
+Diego Diaz</property>
+    <property name="documenters">Miqueas Martinez
+Victor Diaz
+Dario Lopez
+Diego Diaz</property>
+    <property name="translator_credits" translatable="yes">Miqueas Martinez
+Victor Diaz
+Dario Lopez
+Diego Diaz</property>
     <property name="logo_icon_name">image-missing</property>
     <property name="license_type">mit-x11</property>
     <child internal-child="vbox">
@@ -40,7 +52,11 @@
       <object class="GtkHeaderBar" id="aboutDialogHeader">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
+        <property name="title" translatable="yes">Acerca de MoonPlayer</property>
         <property name="show_close_button">True</property>
+        <child>
+          <placeholder/>
+        </child>
       </object>
     </child>
   </object>

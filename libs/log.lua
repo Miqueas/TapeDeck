@@ -1,7 +1,7 @@
 function log(exp, mode, msg, ...)
-  local warnt  = "[Logger] Warnning: %s"
-  local errt   = "[Logger] Error: %s"
-  local infot  = "[Logger] Info: %s"
+  local warnt  = "[MoonPlayer] Warnning: %s"
+  local errt   = "[MoonPlayer] Error: %s"
+  local infot  = "[MoonPlayer] Info: %s"
   local msg    = msg:format(...)
 
   if not (exp) then

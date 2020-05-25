@@ -6,7 +6,7 @@ local Gst = lgi.require("Gst", "1.0")
 local app = Gtk.Application()
 local builder = Gtk.Builder()
 
-log(builder:add_from_file("LPlayer.ui"), 'err', "Hubo un error al cargar la interfaz.")
+log(builder:add_from_file("MoonPlayer.ui"), 'err', "Hubo un error al cargar la interfaz.")
 
 local ui = builder.objects
 
@@ -16,6 +16,11 @@ end
 
 function app:on_activate()
   log(nil, 'info', "Interfaz inicializada")
+
+  function ui.appBtnConfig:on_clicked()
+    ui.aboutDialog:show()
+  end
+
   ui.appWindow:show_all()
   self:add_window(ui.appWindow)
 end
