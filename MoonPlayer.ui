@@ -62,7 +62,8 @@ Diego Diaz</property>
   </object>
   <object class="GtkDialog" id="configDialog">
     <property name="can_focus">False</property>
-    <property name="border_width">10</property>
+    <property name="resizable">False</property>
+    <property name="window_position">center</property>
     <property name="type_hint">dialog</property>
     <child internal-child="vbox">
       <object class="GtkBox" id="configDialogContainer">
@@ -112,6 +113,10 @@ Diego Diaz</property>
           <object class="GtkBox" id="configDialogInner">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
+            <property name="margin_start">10</property>
+            <property name="margin_end">10</property>
+            <property name="margin_top">10</property>
+            <property name="margin_bottom">10</property>
             <property name="spacing">10</property>
             <child>
               <object class="GtkLabel" id="configDialogLabel">
