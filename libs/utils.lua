@@ -1,3 +1,22 @@
+function exec(cmd, ...)
+  if ... then
+    os.execute(cmd:format(...))
+  else
+    os.execute(cmd)
+  end
+end
+
+function fexists(fname)
+  local f = io.open(fname, "r")
+
+  if not f then
+    return false
+  else
+    f:close()
+    return true
+  end
+end
+
 function log(exp, mode, msg, ...)
   local warnt  = "[MoonPlayer] Warnning: %s"
   local errt   = "[MoonPlayer] Error: %s"

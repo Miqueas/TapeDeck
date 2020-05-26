@@ -1,10 +1,14 @@
-require("libs/log")
+require("libs/utils")
+
 local lgi = require("lgi")
-local fs  = require("lfs")
 local Gtk = lgi.require("Gtk", "3.0")
-local Gst = lgi.require("Gst", "1.0")
 local app = Gtk.Application()
 local builder = Gtk.Builder()
+
+local conf = require("libs/conf")
+conf:load()
+
+for k, v in pairs(conf._) do print(k, v) end
 
 log(builder:add_from_file("MoonPlayer.ui"), 'err', "Hubo un error al cargar la interfaz.")
 
