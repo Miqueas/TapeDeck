@@ -1,0 +1,11 @@
+{
+  "lang": "en_US",
+  "library": "",
+  "playback": {
+    "volume": 100,
+    "current": 1,
+    "paused": false,
+    "stoped": true
+  },
+  "active_view": "library"
+}
