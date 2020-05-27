@@ -1,0 +1,20 @@
+return {
+  app_name = "MoonPlayer",
+  app_version_number = 0.10,
+  app_version_string = "v0.1.0",
+  ui_load_err = "There was an error loading the user interface",
+  ui_about_title = "About MoonPlayer",
+  ui_about_comments = "Yet another GTK+ music player. A project of the Moonsteal team.",
+  ui_view_playback_title = "Current playback",
+  ui_view_library_title = "Library",
+  ui_view_playlists_title = "Playlists",
+  ui_welcome_title = "<span size=\"xx-large\" font_weight=\"bold\">¡Welcome to MoonPlayer!</span>",
+  ui_welcome_primary_text = "<span size=\"large\" font_weight=\"bold\">Initial setup</span>",
+  ui_welcome_secondary_text = "Please take a few seconds to configure MoonPlayer. You can ignore this by pressing \"Cancel\", however MoonPlayer will probably not be configured correctly!",
+  ui_label_library_chooser = "Music library:",
+  ui_label_language_chooser = "Language:",
+  ui_menu_vol_label = "Volume",
+  ui_menu_btn_config_label = "Preferences",
+  ui_menu_btn_about_label = "About",
+  ui_config_title = "MoonPlayer configuration"
+}
