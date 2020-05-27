@@ -1,33 +1,35 @@
-local yaml = require("lyaml")
+local json = require("dkjson")
 local cfile = nil
 local cstr = ""
 local cdata = nil
 local conf = {
+  user = false,
   path = {
-    sys = "config.yaml",
-    user = ("%s/.config/moonplayer/config.yaml"):format(os.getenv("HOME"))
+    sys = "config.json",
+    user = ("%s/.config/moonplayer/config.json"):format(os.getenv("HOME"))
   },
   _ = nil,
   __ = nil
 }
 
-function conf:load()
+function conf:open()
   if fexists(self.path.user) then
+    self.user = true
     cfile = io.open(self.path.user, "r+")
     for l in cfile:lines() do cstr = cstr .. l .. "\n" end
-    self._ = yaml.load(cstr)
+    self._ = json.decode(cstr)
     cfile:close()
     cstr = ""
     cfile = io.open(self.path.sys, "r+")
     for l in cfile:lines() do cstr = cstr .. l .. "\n" end
-    self.__ = yaml.load(cstr)
+    self.__ = json.decode(cstr)
     cfile:close()
     cstr = ""
   else
     cfile = io.open(self.path.sys, "r+")
     for l in cfile:lines() do cstr = cstr .. l .. "\n" end
-    self._  = yaml.load(cstr)
-    self.__ = yaml.load(cstr)
+    self._  = json.decode(cstr)
+    self.__ = json.decode(cstr)
     cfile:close()
     cstr = ""
   end
@@ -57,8 +59,8 @@ function conf:write()
     cfile = io.open(self.path.user, "w+")
   end
 
-  cdata = yaml.dump({ self._ })
-  cfile:write(yaml.dump({ self._ }))
+  cdata = json.encode(self._)
+  cfile:write(cdata)
   cfile:close()
 end
 

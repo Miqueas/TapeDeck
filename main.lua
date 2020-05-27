@@ -6,9 +6,7 @@ local app = Gtk.Application()
 local builder = Gtk.Builder()
 
 local conf = require("libs/conf")
-conf:load()
-
-for k, v in pairs(conf._) do print(k, v) end
+conf:open()
 
 log(builder:add_from_file("MoonPlayer.ui"), 'err', "Hubo un error al cargar la interfaz.")
 
@@ -19,13 +17,11 @@ function ui.winBtnConfig:on_clicked()
 end
 
 function ui.menuBtnConfig:on_clicked()
-  ui.config:show()
   ui.config:run()
   ui.config:hide()
 end
 
 function ui.menuBtnAbout:on_clicked()
-  ui.about:show()
   ui.about:run()
   ui.about:hide()
 end
