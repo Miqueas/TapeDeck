@@ -105,7 +105,6 @@ Diego Diaz</property>
           <object class="GtkScrolledWindow" id="winSidebar">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="shadow_type">in</property>
             <property name="propagate_natural_width">True</property>
             <property name="propagate_natural_height">True</property>
             <child>
@@ -133,20 +132,6 @@ Diego Diaz</property>
                       </object>
                     </child>
                     <child>
-                      <object class="GtkListBoxRow">
-                        <property name="visible">True</property>
-                        <property name="can_focus">True</property>
-                        <property name="activatable">False</property>
-                        <property name="selectable">False</property>
-                        <child>
-                          <object class="GtkSeparator">
-                            <property name="visible">True</property>
-                            <property name="can_focus">False</property>
-                          </object>
-                        </child>
-                      </object>
-                    </child>
-                    <child>
                       <object class="GtkListBoxRow" id="winListBoxRowLibrary">
                         <property name="width_request">50</property>
                         <property name="height_request">50</property>
@@ -156,21 +141,7 @@ Diego Diaz</property>
                           <object class="GtkImage" id="winListBoxRowLibraryIcon">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="icon_name">user-home-symbolic</property>
-                          </object>
-                        </child>
-                      </object>
-                    </child>
-                    <child>
-                      <object class="GtkListBoxRow">
-                        <property name="visible">True</property>
-                        <property name="can_focus">True</property>
-                        <property name="activatable">False</property>
-                        <property name="selectable">False</property>
-                        <child>
-                          <object class="GtkSeparator">
-                            <property name="visible">True</property>
-                            <property name="can_focus">False</property>
+                            <property name="icon_name">folder-music-symbolic</property>
                           </object>
                         </child>
                       </object>
@@ -185,7 +156,7 @@ Diego Diaz</property>
                           <object class="GtkImage" id="winListBoxRowPlaylistsIcon">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="icon_name">player_playlist</property>
+                            <property name="icon_name">format-justify-fill-symbolic</property>
                           </object>
                         </child>
                       </object>
@@ -199,6 +170,17 @@ Diego Diaz</property>
             <property name="expand">False</property>
             <property name="fill">True</property>
             <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkSeparator">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
           </packing>
         </child>
         <child>
@@ -223,7 +205,6 @@ Diego Diaz</property>
                       <object class="GtkTreeViewColumn" id="winViewPlaybackColArtist">
                         <property name="resizable">True</property>
                         <property name="sizing">autosize</property>
-                        <property name="title" translatable="yes">Artista</property>
                         <property name="clickable">True</property>
                         <property name="reorderable">True</property>
                         <property name="sort_indicator">True</property>
@@ -236,7 +217,6 @@ Diego Diaz</property>
                       <object class="GtkTreeViewColumn" id="winViewPlaybackColTitle">
                         <property name="resizable">True</property>
                         <property name="sizing">autosize</property>
-                        <property name="title" translatable="yes">Título</property>
                         <property name="clickable">True</property>
                         <property name="reorderable">True</property>
                         <property name="sort_indicator">True</property>
@@ -249,7 +229,6 @@ Diego Diaz</property>
                       <object class="GtkTreeViewColumn" id="winViewPlaybackColAlbum">
                         <property name="resizable">True</property>
                         <property name="sizing">autosize</property>
-                        <property name="title" translatable="yes">Album</property>
                         <property name="clickable">True</property>
                         <property name="reorderable">True</property>
                         <property name="sort_indicator">True</property>
@@ -361,7 +340,7 @@ Diego Diaz</property>
           <packing>
             <property name="expand">True</property>
             <property name="fill">True</property>
-            <property name="position">1</property>
+            <property name="position">2</property>
           </packing>
         </child>
       </object>
@@ -370,7 +349,6 @@ Diego Diaz</property>
       <object class="GtkHeaderBar" id="winHeader">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="spacing">4</property>
         <property name="show_close_button">True</property>
         <child type="title">
           <object class="GtkBox" id="winInfoView">
@@ -459,6 +437,7 @@ Diego Diaz</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
+            <property name="relief">none</property>
             <child>
               <object class="GtkImage" id="winBtnIconPrev">
                 <property name="visible">True</property>
@@ -474,6 +453,7 @@ Diego Diaz</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
+            <property name="relief">none</property>
             <child>
               <object class="GtkImage" id="winBtnIconPlay">
                 <property name="visible">True</property>
@@ -492,6 +472,7 @@ Diego Diaz</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
+            <property name="relief">none</property>
             <child>
               <object class="GtkImage" id="winBtnIconStop">
                 <property name="visible">True</property>
@@ -510,6 +491,7 @@ Diego Diaz</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
+            <property name="relief">none</property>
             <child>
               <object class="GtkImage" id="winBtnIconNext">
                 <property name="visible">True</property>
@@ -537,11 +519,12 @@ Diego Diaz</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
+            <property name="relief">none</property>
             <child>
               <object class="GtkImage" id="winBtnIconConfig">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="icon_name">preferences-other</property>
+                <property name="icon_name">document-properties</property>
               </object>
             </child>
           </object>
@@ -563,7 +546,7 @@ Diego Diaz</property>
       <object class="GtkBox" id="configContainer">
         <property name="can_focus">False</property>
         <property name="orientation">vertical</property>
-        <property name="spacing">2</property>
+        <property name="spacing">10</property>
         <child internal-child="action_area">
           <object class="GtkButtonBox" id="configBtnBox">
             <property name="can_focus">False</property>
@@ -668,7 +651,7 @@ Diego Diaz</property>
       </object>
     </child>
     <action-widgets>
-      <action-widget response="-10">configBtnAccept</action-widget>
+      <action-widget response="-5">configBtnAccept</action-widget>
       <action-widget response="-6">configBtnCancel</action-widget>
     </action-widgets>
     <child type="titlebar">
@@ -679,7 +662,7 @@ Diego Diaz</property>
       </object>
     </child>
     <action-widgets>
-      <action-widget response="-10">configBtnAccept</action-widget>
+      <action-widget response="-5">configBtnAccept</action-widget>
       <action-widget response="-6">configBtnCancel</action-widget>
     </action-widgets>
   </object>
@@ -699,6 +682,9 @@ Diego Diaz</property>
           <object class="GtkLabel" id="menuVolLabel">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
+            <attributes>
+              <attribute name="weight" value="bold"/>
+            </attributes>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -755,13 +741,14 @@ Diego Diaz</property>
     <property name="resizable">False</property>
     <property name="window_position">center</property>
     <property name="type_hint">dialog</property>
+    <property name="gravity">center</property>
     <property name="buttons">ok-cancel</property>
     <property name="use_markup">True</property>
     <child internal-child="vbox">
       <object class="GtkBox" id="welcomeBox">
         <property name="can_focus">False</property>
         <property name="orientation">vertical</property>
-        <property name="spacing">2</property>
+        <property name="spacing">10</property>
         <child internal-child="action_area">
           <object class="GtkButtonBox" id="welcomeBtnBox">
             <property name="can_focus">False</property>
@@ -845,7 +832,7 @@ Diego Diaz</property>
       <object class="GtkHeaderBar" id="welcomeHeader">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="spacing">0</property>
+        <property name="spacing">10</property>
         <property name="show_close_button">True</property>
         <child type="title">
           <object class="GtkLabel" id="welcomeTitle">
