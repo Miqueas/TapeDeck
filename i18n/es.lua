@@ -16,5 +16,8 @@ return {
   ui_menu_vol_label = "Volumen",
   ui_menu_btn_config_label = "Preferencias",
   ui_menu_btn_about_label = "Acerca de",
-  ui_config_title = "Configuración de MoonPlayer"
+  ui_config_title = "Configuración de MoonPlayer",
+  ui_view_playback_col_artist = "Artista",
+  ui_view_playback_col_title = "Título",
+  ui_view_playback_col_album = "Album"
 }
