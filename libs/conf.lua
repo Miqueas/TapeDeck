@@ -36,13 +36,8 @@ function conf:open()
 end
 
 function conf:get(key)
-  if self._[key] then
-    return self._[key]
-  elseif self.__[key] then
-    return self.__[key]
-  else
-    return log(nil, 'err', "La llave '%s' no existe.", key)
-  end
+  local val = self._[key] or self.__[key]
+  return val
 end
 
 function conf:set(key, val)
