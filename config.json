@@ -2,7 +2,7 @@
   "debug": false,
   "lang": "en",
   "library": "",
-  "view": "library",
+  "view": "playback",
   "playback": {
     "volume": 100,
     "current": 1,
