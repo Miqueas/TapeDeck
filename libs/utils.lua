@@ -37,3 +37,9 @@ function log(exp, mode, msg, ...)
     return exp
   end
 end
+
+function strToBool(str)
+  if str == "true" then return true
+  elseif str == "false" then return false
+  else return nil end
+end
