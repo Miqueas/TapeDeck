@@ -4,13 +4,13 @@ return {
   app_version_string = "v0.1.0",
   ui_load_err = "There was an error loading the user interface",
   ui_about_title = "About MoonPlayer",
-  ui_about_comments = "Yet another GTK+ music player.",
+  ui_about_comments = "Yet another GTK+ music player. A project from the Moonsteal team.",
   ui_view_playback_title = "Current playback",
   ui_view_library_title = "Library",
   ui_view_playlists_title = "Playlists",
-  ui_welcome_title = "<span size=\"xx-large\" font_weight=\"bold\">¡Welcome to MoonPlayer!</span>",
+  ui_welcome_title = "<span size=\"xx-large\" font_weight=\"bold\">Welcome to MoonPlayer!</span>",
   ui_welcome_primary_text = "<span size=\"large\" font_weight=\"bold\">Initial setup</span>",
-  ui_welcome_secondary_text = "Please take a few seconds to configure MoonPlayer. You can ignore this by pressing \"Cancel\", however MoonPlayer may not work!",
+  ui_welcome_secondary_text = "Please take a few seconds to configure MoonPlayer. You can ignore this by pressing \"Cancel\", however MoonPlayer will probably not be configured correctly!",
   ui_label_library_chooser = "Music library:",
   ui_label_language_chooser = "Language:",
   ui_menu_vol_label = "Volume",
@@ -19,7 +19,5 @@ return {
   ui_config_title = "MoonPlayer configuration",
   ui_view_playback_col_artist = "Artist",
   ui_view_playback_col_title = "Title",
-  ui_view_playback_col_album = "Album",
-  ui_btn_accept = "Accept",
-  ui_btn_cancel = "Cancel"
+  ui_view_playback_col_album = "Album"
 }
