@@ -8,7 +8,7 @@ local GObject = lgi.GObject
 
 local app = Gtk.Application()
 local builder = Gtk.Builder()
-builder:add_from_file("data/ui/MoonPlayer3.glade")
+builder:add_from_file("data/ui/MoonPlayer.ui")
 
 local ui = builder.objects
 
