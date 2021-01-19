@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<interface>
+
+<!-- Moonplayer.Window
+
+  Ventana principal de la aplicación.
+
+-->
+<template class="MoonplayerWindow" parent="HdyApplicationWindow">
+  <property name="window-position">center</property>
+  <property name="default-width">900</property>
+  <property name="default-height">500</property>
+  <property name="gravity">center</property>
+
+  <child>
+    <object class="GtkBox">
+      <property name="visible">True</property>
+      <property name="orientation">vertical</property>
+
+      <!-- Header bar -->
+      <child>
+        <object class="MoonplayerHeader" id="Header"></object>
+      </child>
+      <!-- End Header bar -->
+
+      <!-- Top stack -->
+      <child>
+        <object class="GtkStack" id="Stack">
+          <property name="visible">True</property>
+          <property name="transition-duration">240</property>
+          <property name="transition-type">slide-up-down</property>
+
+          <!-- Library box -->
+          <child>
+            <object class="GtkBox">
+              <property name="visible">True</property>
+              <property name="orientation">vertical</property>
+
+              <!-- Library view -->
+              <child>
+                <object class="GtkStack" id="LibraryStack">
+                  <property name="visible">True</property>
+                  <property name="transition-type">slide-left-right</property>
+                  <property name="transition-duration">160</property>
+
+                  <!-- Local library -->
+                  <child>
+                    <object class="GtkScrolledWindow">
+                      <property name="visible">True</property>
+                      <property name="propagate-natural-width">True</property>
+                      <property name="propagate-natural-height">True</property>
+                      <property name="margin">10</property>
+
+                      <style>
+                        <class name="LibraryView"/>
+                      </style>
+
+                      <!-- Items view -->
+                      <child>
+                        <object class="GtkFlowBox">
+                          <property name="visible">True</property>
+                          <property name="row-spacing">10</property>
+                          <property name="column-spacing">10</property>
+                        </object>
+                      </child>
+                      <!-- End Items view -->
+
+                    </object>
+
+                    <packing>
+                      <property name="name">Local</property>
+                      <property name="title">Local</property>
+                      <property name="icon-name">library-music-symbolic</property>
+                    </packing>
+                  </child>
+                  <!-- End Local library -->
+
+                  <!-- MPD library -->
+                  <child>
+                    <object class="GtkScrolledWindow">
+                      <property name="visible">True</property>
+                      <property name="propagate-natural-width">True</property>
+                      <property name="propagate-natural-height">True</property>
+                      <property name="margin">10</property>
+
+                      <style>
+                        <class name="LibraryView"/>
+                      </style>
+
+                      <!-- Items view -->
+                      <child>
+                        <object class="GtkFlowBox">
+                          <property name="visible">True</property>
+                          <property name="row-spacing">10</property>
+                          <property name="column-spacing">10</property>
+                        </object>
+                      </child>
+                      <!-- End Items view -->
+
+                    </object>
+
+                    <packing>
+                      <property name="name">MPD</property>
+                      <property name="title">MPD</property>
+                      <property name="icon-name">audio-card-symbolic</property>
+                    </packing>
+                  </child>
+                  <!-- End MPD library -->
+
+                </object>
+
+                <packing>
+                  <property name="expand">True</property>
+                </packing>
+              </child>
+              <!-- End Library view -->
+
+              <!-- Bottom bar -->
+              <child>
+                <object class="HdyViewSwitcherBar">
+                  <property name="visible">True</property>
+                  <property name="reveal">True</property>
+                  <property name="stack">LibraryStack</property>
+                </object>
+              </child>
+              <!-- End Bottom bar -->
+
+            </object>
+
+            <packing>
+              <property name="name">Library</property>
+            </packing>
+          </child>
+          <!-- End Library box -->
+
+        </object>
+
+        <packing>
+          <property name="expand">True</property>
+        </packing>
+      </child>
+      <!-- End Top stack -->
+
+    </object>
+  </child>
+
+</template>
+
+</interface>

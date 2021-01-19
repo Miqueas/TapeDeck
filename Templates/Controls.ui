@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<interface>
+
+<!-- Moonplayer.Controls
+
+  Base class for media playback controls
+
+-->
+<template class="MoonplayerControls" parent="HdyClamp">
+  <property name="visible">True</property>
+  <property name="valign">center</property>
+  <property name="maximum-size">640</property>
+  <property name="tightening-threshold">580</property>
+
+  <child>
+    <object class="GtkBox">
+      <property name="visible">True</property>
+      <property name="spacing">6</property>
+
+      <!-- Media playback button box -->
+      <child>
+        <object class="GtkButtonBox">
+          <property name="visible">True</property>
+          <property name="layout-style">expand</property>
+
+          <!-- Prev button -->
+          <child>
+            <object class="GtkButton" id="PrevBtn">
+              <property name="visible">True</property>
+
+              <child>
+                <object class="GtkImage">
+                  <property name="visible">True</property>
+                  <property name="icon-name">media-seek-backward-symbolic</property>
+                </object>
+              </child>
+
+            </object>
+          </child>
+          <!-- End Prev button -->
+
+          <!-- Play/Pause button -->
+          <child>
+            <object class="GtkButton" id="PlayBtn">
+              <property name="visible">True</property>
+
+              <child>
+                <object class="GtkImage">
+                  <property name="visible">True</property>
+                  <property name="icon-name">media-playback-start-symbolic</property>
+                </object>
+              </child>
+
+            </object>
+          </child>
+          <!-- End Play/Pause button -->
+
+          <!-- Next button -->
+          <child>
+            <object class="GtkButton" id="NextBtn">
+              <property name="visible">True</property>
+
+              <child>
+                <object class="GtkImage">
+                  <property name="visible">True</property>
+                  <property name="icon-name">media-seek-forward-symbolic</property>
+                </object>
+              </child>
+
+            </object>
+          </child>
+          <!-- End Next button -->
+
+        </object>
+      </child>
+      <!-- End Media playback button box -->
+
+      <!-- Current time -->
+      <child>
+        <object class="GtkLabel">
+          <property name="visible">True</property>
+          <property name="label">0:00</property>
+          <property name="justify">center</property>
+          <property name="ellipsize">end</property>
+          <property name="width-chars">6</property>
+          <property name="max-width-chars">6</property>
+        </object>
+      </child>
+      <!-- End Current time -->
+
+      <!-- Time slider -->
+      <child>
+        <object class="GtkScale">
+          <property name="width-request">180</property>
+          <property name="visible">True</property>
+          <property name="draw-value">False</property>
+          <property name="digits">0</property>
+          <property name="round-digits">0</property>
+        </object>
+
+        <packing>
+          <property name="expand">True</property>
+        </packing>
+      </child>
+
+      <!-- Total time -->
+      <child>
+        <object class="GtkLabel">
+          <property name="visible">True</property>
+          <property name="label">0:00</property>
+          <property name="justify">center</property>
+          <property name="ellipsize">end</property>
+          <property name="width-chars">6</property>
+          <property name="max-width-chars">6</property>
+        </object>
+      </child>
+
+      <!-- Media playlist button box -->
+      <child>
+        <object class="GtkButtonBox">
+          <property name="visible">True</property>
+          <property name="layout-style">expand</property>
+
+          <!-- Repeat button -->
+          <child>
+            <object class="GtkToggleButton">
+              <property name="visible">True</property>
+
+              <child>
+                <object class="GtkImage">
+                  <property name="visible">True</property>
+                  <property name="icon-name">media-playlist-repeat-symbolic</property>
+                </object>
+              </child>
+
+            </object>
+          </child>
+
+          <!-- Shuffle button -->
+          <child>
+            <object class="GtkToggleButton">
+              <property name="visible">True</property>
+
+              <child>
+                <object class="GtkImage">
+                  <property name="visible">True</property>
+                  <property name="icon-name">media-playlist-shuffle-symbolic</property>
+                </object>
+              </child>
+
+            </object>
+          </child>
+
+          <!-- Volume button -->
+          <child>
+            <object class="GtkButton">
+              <property name="visible">True</property>
+
+              <child>
+                <object class="GtkImage">
+                  <property name="visible">True</property>
+                  <property name="icon-name">audio-volume-high-symbolic</property>
+                </object>
+              </child>
+
+            </object>
+          </child>
+
+        </object>
+      </child>
+
+    </object>
+  </child>
+
+</template>
+
+</interface>

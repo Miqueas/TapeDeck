@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<interface>
+
+<!-- Moonplayer.Header
+
+  Barra de encabezado de la aplicación.
+
+-->
+<template class="MoonplayerHeader" parent="HdyHeaderBar">
+  <property name="visible">True</property>
+  <property name="show-close-button">True</property>
+
+  <!-- Home button revealer -->
+  <child>
+    <object class="GtkRevealer" id="HomeBtnRev">
+      <property name="visible">True</property>
+      <property name="valign">center</property>
+      <property name="transition-type">slide-right</property>
+
+      <!-- Home button -->
+      <child>
+        <object class="GtkButton" id="HomeBtn">
+          <property name="visible">True</property>
+
+          <child>
+            <object class="GtkImage">
+              <property name="visible">True</property>
+              <property name="icon-name">go-home-symbolic</property>
+            </object>
+          </child>
+
+        </object>
+      </child>
+      <!-- End Home button -->
+
+    </object>
+  </child>
+  <!-- End Home button revealer -->
+
+  <!-- Custom title -->
+  <child type="title">
+    <object class="GtkStack" id="Stack">
+      <property name="visible">True</property>
+      <!-- <property name="hexpand">True</property> -->
+      <property name="valign">center</property>
+      <!-- <property name="halign">fill</property> -->
+      <property name="transition-duration">240</property>
+      <property name="transition-type">slide-up-down</property>
+
+      <!-- Header title -->
+      <!--
+      <child>
+        <object class="MoonplayerHeaderTitle" id="Title"></object>
+
+        <packing>
+          <property name="name">Title</property>
+        </packing>
+      </child>
+      -->
+      <!-- End Header title -->
+
+      <!-- Media info and controls -->
+      <child>
+        <object class="GtkBox">
+          <property name="visible">True</property>
+          <property name="orientation">horizontal</property>
+
+          <child>
+            <object class="MoonplayerInfo" id="Info"></object>
+          </child>
+
+          <child>
+            <object class="MoonplayerControls" id="Controls"></object>
+
+            <packing>
+              <property name="expand">True</property>
+            </packing>
+          </child>
+        </object>
+
+        <packing>
+          <property name="name">Media</property>
+        </packing>
+      </child>
+      <!-- End Media info and controls -->
+
+      <!-- Library stack switcher -->
+      <child>
+        <object class="HdyViewSwitcher" id="Switcher"></object>
+      </child>
+      <!-- End Library stack switcher -->
+
+    </object>
+  </child>
+  <!-- End Custom title -->
+
+  <!-- Application button -->
+  <child>
+    <object class="GtkButton" id="AppBtn">
+      <property name="visible">True</property>
+      <property name="valign">center</property>
+
+      <child>
+        <object class="GtkImage">
+          <property name="visible">True</property>
+          <property name="icon-name">preferences-other-symbolic</property>
+        </object>
+
+      </child>
+    </object>
+
+    <packing>
+      <property name="pack-type">end</property>
+    </packing>
+  </child>
+  <!-- End Application button -->
+
+</template>
+
+</interface>

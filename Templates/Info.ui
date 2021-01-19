@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<interface>
+
+<template class="MoonplayerInfo" parent="HdyClamp">
+  <property name="visible">True</property>
+  <property name="maximum-size">280</property>
+  <property name="tightening-threshold">240</property>
+  <property name="valign">center</property>
+  <property name="halign">start</property>
+
+  <!-- Box -->
+  <child>
+    <object class="GtkBox">
+      <property name="spacing">6</property>
+      <property name="visible">True</property>
+      <property name="width-request">140</property>
+      <property name="orientation">horizontal</property>
+
+      <!-- Media album artwork -->
+      <child>
+        <object class="GtkEventBox" id="MediaArtEv">
+          <property name="visible">True</property>
+          <property name="above-child">True</property>
+
+          <child>
+            <object class="GtkImage" id="MediaArtImg">
+              <property name="visible">True</property>
+              <property name="halign">center</property>
+              <property name="valign">center</property>
+
+            </object>
+          </child>
+
+        </object>
+      </child>
+      <!-- End Media album artwork -->
+
+      <!-- Media title and artist -->
+      <child>
+        <object class="GtkBox">
+          <property name="visible">True</property>
+          <property name="valign">center</property>
+          <property name="orientation">vertical</property>
+
+          <!-- Title -->
+          <child>
+            <object class="GtkLabel" id="Title">
+              <property name="xalign">0</property>
+              <property name="visible">True</property>
+              <property name="ellipsize">end</property>
+              <property name="label">Title</property>
+
+              <attributes>
+                <attribute name="weight" value="bold"/>
+              </attributes>
+
+            </object>
+          </child>
+          <!-- End Title -->
+
+          <!-- Artist -->
+          <child>
+            <object class="GtkLabel" id="Artist">
+              <property name="xalign">0</property>
+              <property name="visible">True</property>
+              <property name="ellipsize">end</property>
+              <property name="label">Artist</property>
+            </object>
+          </child>
+          <!-- End Artist -->
+
+        </object>
+
+        <packing>
+          <property name="expand">True</property>
+        </packing>
+      </child>
+      <!-- End Media title and artist -->
+
+    </object>
+  </child>
+  <!-- End Box -->
+
+</template>
+
+</interface>
