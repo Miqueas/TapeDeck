@@ -1,21 +1,30 @@
 # What is this?
 
-MoonPlayer is a very simple music player written in pure Lua. It's uses GTK for the UI and Gstreamer for media playback.
+A GTK music player written in pure Lua.
 
 # Running
 
-__MoonPlayer is still not finished and is a WIP (Work In Progress) that currently can't
-play music__, but still, you can run `main.lua` for a preview of the app. You will need:
+__MoonPlayer is still not finished and currently can't play music__, but still, you can run `Main.lua` for a preview of the app. You will need:
 
  * Lua 5.1+ (LuaJIT also works)
  * [lgi](https://github.com/pavouk/lgi/)
- * [dkjson](http://dkolf.de/src/dkjson-lua.fsl/home)
- * [luafilesystem](https://keplerproject.github.io/luafilesystem/index.html)
 
-You can install all the dependencies using LuaRocks:
+You can install lgi using LuaRocks:
 
 ```
 luarocks install lgi
-luarocks install dkjson
-luarocks install luafilesystem
+```
+
+Or with the package manager of your distro (if available).
+
+Before running Moonplayer, you'll need compile the `Data/Resources.xml` file:
+
+```
+glib-compile-resources Data/Resources.xml
+```
+
+And finally you can run the app:
+
+```
+lua Main.lua
 ```
