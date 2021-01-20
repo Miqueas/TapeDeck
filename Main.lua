@@ -16,7 +16,6 @@ Moonplayer = lgi.package("Moonplayer")
 require("Source.App")
 require("Source.Controls")
 require("Source.Header")
-require("Source.HeaderTitle")
 require("Source.Info")
 require("Source.Window")
 

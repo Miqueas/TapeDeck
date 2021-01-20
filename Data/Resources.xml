@@ -5,7 +5,6 @@
     <file compressed="true" preprocess="xml-stripblanks">Templates/Info.ui</file>
     <file compressed="true" preprocess="xml-stripblanks">Templates/Window.ui</file>
     <file compressed="true" preprocess="xml-stripblanks">Templates/Header.ui</file>
-    <file compressed="true" preprocess="xml-stripblanks">Templates/HeaderTitle.ui</file>
     <file compressed="true" preprocess="xml-stripblanks">Templates/Controls.ui</file>
   </gresource>
 </gresources>
