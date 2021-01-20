@@ -2,6 +2,14 @@
 
 A GTK music player written in pure Lua.
 
+![Screenshot](Misc/Screenshot.png)
+
+<p align="center">
+  <i>
+    <sup>Reference screenshot</sup>
+  </i>
+</p>
+
 # Running
 
 __MoonPlayer is still not finished and currently can't play music__, but still, you can run `Main.lua` for a preview of the app. You will need:
