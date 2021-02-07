@@ -12,7 +12,11 @@ A GTK music player written in pure Lua.
 
 # Running
 
-__MoonPlayer is still not finished and currently can't play music__, but still, you can run `Main.lua` for a preview of the app. You will need:
+__NOTE 1__: MoonPlayer is still not finished and currently can't play music, but still, you can run `Main.lua` for a preview of the app.
+
+__NOTE 2__: In [this commit](https://github.com/M1que4s/Moonplayer/commit/87ca3044f44c614b533633e98017da428df78c0a) I added support for auto-scan the user music folder, but if the folder has a lot of music files, the app can crash. I'm currently working on this problem
+
+You will need:
 
  * Lua 5.1+ (LuaJIT also works)
  * [lgi](https://github.com/pavouk/lgi/)
