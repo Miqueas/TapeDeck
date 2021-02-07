@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<interface>
+
+<template class="MoonplayerLocalItem" parent="GtkFlowBoxChild">
+  <property name="visible">True</property>
+  <property name="halign">center</property>
+  <property name="valign">start</property>
+  <property name="hexpand">True</property>
+
+  <style>
+    <class name="LocalItem"/>
+  </style>
+
+  <child>
+    <object class="GtkBox">
+      <property name="visible">True</property>
+      <property name="orientation">vertical</property>
+      <property name="spacing">10</property>
+
+      <child>
+        <object class="HdyAvatar" id="Artwork">
+          <property name="visible">True</property>
+          <property name="icon-name">multimedia-audio-player-symbolic</property>
+          <property name="size">96</property>
+        </object>
+      </child>
+
+      <child>
+        <object class="GtkBox">
+          <property name="visible">True</property>
+          <property name="orientation">vertical</property>
+
+          <child>
+            <object class="GtkLabel" id="Title">
+              <property name="visible">True</property>
+              <property name="label">Title</property>
+              <property name="justify">center</property>
+              <property name="ellipsize">end</property>
+              <property name="width-chars">14</property>
+              <property name="single-line-mode">True</property>
+              <property name="max-width-chars">14</property>
+
+              <style>
+                <class name="LocalItemTitle"/>
+              </style>
+
+            </object>
+          </child>
+
+          <child>
+            <object class="GtkLabel" id="Artist">
+              <property name="visible">True</property>
+              <property name="label">Artist</property>
+              <property name="justify">center</property>
+              <property name="ellipsize">end</property>
+              <property name="width-chars">18</property>
+              <property name="single-line-mode">True</property>
+              <property name="max-width-chars">18</property>
+            </object>
+          </child>
+        </object>
+
+        <packing>
+          <property name="expand">True</property>
+        </packing>
+      </child>
+    </object>
+  </child>
+
+</template>
+
+</interface>
