@@ -47,19 +47,19 @@ function Moonplayer.Info:_class_init(klass)
 
   klass:install_property(1, GObject.ParamSpecObject(
       "img", "Image", "Media album artwork", GdkPixbuf.Pixbuf,
-      { "READWRITE", "CONSTRUCT" }
+      { GObject.ParamFlags.READWRITE, GObject.ParamFlags.CONSTRUCT }
     )
   )
 
   klass:install_property(2, GObject.ParamSpecString(
       "title", "Title", "Media title", "Moonplayer",
-      { "READWRITE", "CONSTRUCT" }
+      { GObject.ParamFlags.READWRITE, GObject.ParamFlags.CONSTRUCT }
     )
   )
 
   klass:install_property(3, GObject.ParamSpecString(
       "artist", "Artist", "Media artist name", "Astronauts music player",
-      { "READWRITE", "CONSTRUCT" }
+      { GObject.ParamFlags.READWRITE, GObject.ParamFlags.CONSTRUCT }
     )
   )
 end
