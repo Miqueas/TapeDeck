@@ -1,21 +1,27 @@
-.LibraryItem {
-  padding: 10px;
-  border-radius: 6px;
-  /* margin: 10px; */
-  background: @theme_bg_color;
-  border: 1px solid @borders;
-}
-
 .LibraryView {
   background-color: @theme_base_color;
   border: 1px solid @borders;
   border-radius: 6px;
 }
 
-.LibraryView scrollbar { opacity: 0; }
-
 .LibraryView:backdrop {
   color: @theme_unfocused_text_color;
   background-color: @theme_unfocused__base_color;
   border-color: @unfocused_borders;
+}
+
+.LibraryView flowbox {
+  margin: 10px;
+}
+
+.LocalItemTitle {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.LocalItem {
+  background-color: @theme_bg_color;
+  border: 1px solid @borders;
+  border-radius: 6px;
+  padding: 10px;
 }
