@@ -1,3 +1,5 @@
+[![License][LicenseBadge]][licenseURL]
+
 # What is this?
 
 A GTK music player written in pure Lua.
@@ -40,3 +42,6 @@ And finally you can run the app:
 ```
 lua Main.lua
 ```
+
+[LicenseBadge]: https://img.shields.io/badge/License-Zlib-brightgreen?style=for-the-badge
+[LicenseURL]: https://opensource.org/licenses/Zlib
