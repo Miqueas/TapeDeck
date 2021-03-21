@@ -51,7 +51,7 @@ local function ScannerWrap()
 end
 
 function Moonplayer.App:_init()
-  self.application_id = "com.github.M1que4s.Moonplayer"
+  self.application_id = "com.github.Miqueas.Moonplayer"
 end
 
 function Moonplayer.App:do_startup()

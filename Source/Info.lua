@@ -2,7 +2,7 @@ Moonplayer:class("Info", Gtk.EventBox)
 
 -- Class constructor
 function Moonplayer.Info:_class_init(klass)
-  klass:set_template_from_resource("/com/github/M1que4s/Moonplayer/Templates/Info.ui")
+  klass:set_template_from_resource("/com/github/Miqueas/Moonplayer/Templates/Info.ui")
   klass:bind_template_child_full("Img", true, 0)
   klass:bind_template_child_full("Title", true, 0)
   klass:bind_template_child_full("Artist", true, 0)

@@ -1,5 +1,6 @@
 -- GI Wrapper
-local lgi  = require("lgi")
+local lgi = require("lgi")
+SQLite    = require("lsqlite3")
 
 -- Just testing the LGI logging tool/system
 Log = lgi.log.domain("Moonplayer")
@@ -35,10 +36,10 @@ Moonplayer = lgi.package("Moonplayer")
 Log.message("Created the Moonplayer namespace")
 
 -- I'm using this in development
-local Settings = Gtk.Settings.get_default()
-Settings.gtk_application_prefer_dark_theme = true
-Settings.gtk_theme_name = "Adwaita"
-Log.message("Configured the app theme")
+--local Settings = Gtk.Settings.get_default()
+--Settings.gtk_application_prefer_dark_theme = false
+--Settings.gtk_theme_name = "Adwaita"
+--Log.message("Configured the app theme")
 
 -- Loads the rest of the app
 require("Source.App")

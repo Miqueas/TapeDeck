@@ -1,7 +1,7 @@
 Moonplayer:class("LibraryView", Hdy.Clamp)
 
 function Moonplayer.LibraryView:_class_init(Klass)
-  Klass:set_template_from_resource("/com/github/M1que4s/Moonplayer/Templates/LibraryView.ui")
+  Klass:set_template_from_resource("/com/github/Miqueas/Moonplayer/Templates/LibraryView.ui")
   Klass:bind_template_child_full("FlowBox", true, 0)
 
   local signals = {}

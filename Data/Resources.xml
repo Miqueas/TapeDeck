@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <gresources>
-  <gresource prefix="/com/github/M1que4s/Moonplayer">
+  <gresource prefix="/com/github/Miqueas/Moonplayer">
     <file compressed="true">Data/Styles.css</file>
     <file compressed="true" preprocess="xml-stripblanks">Templates/Info.ui</file>
     <file compressed="true" preprocess="xml-stripblanks">Templates/Window.ui</file>

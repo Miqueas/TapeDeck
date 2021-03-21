@@ -1,7 +1,7 @@
 Moonplayer:class("Window", Hdy.ApplicationWindow)
 
 function Moonplayer.Window:_class_init(Klass)
-  Klass:set_template_from_resource("/com/github/M1que4s/Moonplayer/Templates/Window.ui")
+  Klass:set_template_from_resource("/com/github/Miqueas/Moonplayer/Templates/Window.ui")
   Klass:bind_template_child_full("LocalView", true, 0)
 
   function Klass:set_property(id, val, spec)
@@ -38,7 +38,7 @@ function Moonplayer.Window:_init()
   self.priv.LocalView = self:get_template_child(Moonplayer.Window, "LocalView")
 
   local styles = Gtk.CssProvider();
-  styles:load_from_resource("/com/github/M1que4s/Moonplayer/Data/Styles.css");
+  styles:load_from_resource("/com/github/Miqueas/Moonplayer/Data/Styles.css");
 
   self:get_style_context().add_provider_for_screen(
     self:get_screen(self),

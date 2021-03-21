@@ -1,7 +1,7 @@
 Moonplayer:class("Header", Hdy.HeaderBar)
 
 function Moonplayer.Header:_class_init(klass)
-  klass:set_template_from_resource("/com/github/M1que4s/Moonplayer/Templates/Header.ui")
+  klass:set_template_from_resource("/com/github/Miqueas/Moonplayer/Templates/Header.ui")
   --klass:bind_template_child_full("Stack", true, 0)
   --klass:bind_template_child_full("HomeBtn", true, 0)
   --klass:bind_template_child_full("Switcher", true, 0)
