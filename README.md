@@ -26,7 +26,7 @@ You will need:
 You can install lgi using LuaRocks:
 
 ```
-luarocks install lgi
+sudo luarocks install lgi
 ```
 
 Or with the package manager of your distro (if available).
