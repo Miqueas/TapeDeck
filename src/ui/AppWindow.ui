@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<interface>
+
+<template class="TapeDeckAppWindow" parent="AdwApplicationWindow">
+  <property name="title">Tape Deck</property>
+  <property name="default-width">900</property>
+	<property name="default-height">500</property>
+</template>
+
+</interface>

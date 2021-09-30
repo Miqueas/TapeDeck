@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gresources>
+
+<gresource prefix="/com/github/Miqueas/TapeDeck">
+  <file alias="AppWindow.ui" compressed="true" preprocess="xml-stripblanks">ui/AppWindow.ui</file>
+</gresource>
+
+</gresources>
