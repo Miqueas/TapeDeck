@@ -6,8 +6,9 @@ project('com.github.Miqueas.TapeDeck', 'vala', 'c',
 )
 
 deps = [
-  dependency('gtk4',         version: '>=4.4'),
-  dependency('libadwaita-1', version: '>=1.0')
+  dependency('gtk4',          version: '>=4.4'),
+  dependency('libadwaita-1',  version: '>=1.0', fallback: 'libadwaita'),
+  dependency('gstreamer-1.0', version: '>=1.18')
 ]
 
 subdir('src')
