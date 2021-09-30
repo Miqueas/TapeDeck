@@ -16,6 +16,7 @@ public class TapeDeck.App : Adw.Application {
 
   protected override void startup() {
     base.startup();
+    this.style_manager.color_scheme = Adw.ColorScheme.PREFER_DARK;
     new AppWindow(this);
   }
 }
