@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<interface>
+
+<template class="TapeDeckControls" parent="GtkWidget">
+  <property name="layout-manager">
+    <object class="GtkBoxLayout"/>
+  </property>
+
+  <!-- Playback buttons -->
+  <child>
+    <object class="GtkBox">
+      <property name="orientation">horizontal</property>
+
+      <style>
+        <class name="linked"/>
+      </style>
+
+      <child>
+        <object class="GtkButton">
+          <property name="child">
+            <object class="GtkImage">
+              <property name="icon-name">media-seek-backward-symbolic</property>
+            </object>
+          </property>
+        </object>
+      </child>
+
+      <child>
+        <object class="GtkButton">
+          <property name="child">
+            <object class="GtkImage">
+              <property name="icon-name">media-playback-start-symbolic</property>
+            </object>
+          </property>
+        </object>
+      </child>
+
+      <child>
+        <object class="GtkButton">
+          <property name="child">
+            <object class="GtkImage">
+              <property name="icon-name">media-seek-forward-symbolic</property>
+            </object>
+          </property>
+        </object>
+      </child>
+
+    </object>
+  </child>
+  <!-- End Playback buttons -->
+
+  <!-- Elapsed time -->
+  <child>
+    <object class="GtkLabel">
+      <property name="label">0:00</property>
+      <property name="ellipsize">end</property>
+      <property name="width-chars">6</property>
+      <property name="max-width-chars">6</property>
+    </object>
+  </child>
+  <!-- End Elapsed time -->
+
+  <!-- Time slider -->
+  <child>
+    <object class="GtkScale">
+      <property name="hexpand">True</property>
+      <property name="width-request">160</property>
+      <property name="draw-value">False</property>
+    </object>
+  </child>
+  <!-- End Time slider -->
+
+  <!-- Total time -->
+  <child>
+    <object class="GtkLabel">
+      <property name="label">0:00</property>
+      <property name="ellipsize">end</property>
+      <property name="width-chars">6</property>
+      <property name="max-width-chars">6</property>
+    </object>
+  </child>
+  <!-- End Total time -->
+
+  <!-- Playback options -->
+  <child>
+    <object class="GtkBox">
+      <property name="orientation">horizontal</property>
+
+      <style>
+        <class name="linked"/>
+      </style>
+
+      <child>
+        <object class="GtkButton">
+          <property name="child">
+            <object class="GtkImage">
+              <property name="icon-name">media-playlist-repeat-symbolic</property>
+            </object>
+          </property>
+        </object>
+      </child>
+
+      <child>
+        <object class="GtkButton">
+          <property name="child">
+            <object class="GtkImage">
+              <property name="icon-name">media-playlist-shuffle-symbolic</property>
+            </object>
+          </property>
+        </object>
+      </child>
+
+      <child>
+        <object class="GtkButton">
+          <property name="child">
+            <object class="GtkImage">
+              <property name="icon-name">audio-volume-high-symbolic</property>
+            </object>
+          </property>
+        </object>
+      </child>
+
+    </object>
+  </child>
+  <!-- End Playback options -->
+
+</template>
+
+</interface>
