@@ -12,11 +12,7 @@
 
       <!-- Header -->
       <child>
-        <object class="AdwHeaderBar">
-          <style>
-            <class name="flat"/>
-          </style>
-        </object>
+        <object class="TapeDeckHeader" id="header"/>
       </child>
       <!-- End Header -->
     </object>
