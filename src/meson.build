@@ -2,6 +2,8 @@ gnome = import('gnome')
 
 src = [
   'App.vala',
+  'Header.vala',
+  'Controls.vala',
   'AppWindow.vala'
 ]
 
