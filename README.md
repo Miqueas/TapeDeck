@@ -11,6 +11,7 @@ You'll need:
  * `meson >=0.56.0`
  * `gtk4 >=4.4`
  * `libadwaita-1 >=1.0`
+ * `gstreamer-1.0 >=1.18`
 
 Then:
 
