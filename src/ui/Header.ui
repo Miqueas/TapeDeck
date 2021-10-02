@@ -15,8 +15,13 @@
         <class name="flat"/>
       </style>
 
+      <child type="start">
+        <object class="TapeDeckTitle"/>
+      </child>
+
       <child type="title">
         <object class="AdwClamp">
+          <property name="valign">center</property>
           <property name="maximum-size">620</property>
           <property name="tightening-threshold">580</property>
 
@@ -25,6 +30,17 @@
           </child>
         </object>
       </child>
+
+      <child type="end">
+        <object class="GtkButton">
+          <property name="child">
+            <object class="GtkImage">
+              <property name="icon-name">applications-system-symbolic</property>
+            </object>
+          </property>
+        </object>
+      </child>
+
     </object>
   </child>
 
