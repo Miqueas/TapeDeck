@@ -18,6 +18,7 @@ public class TapeDeck.App : Adw.Application {
     base.startup();
     this.style_manager.color_scheme = Adw.ColorScheme.PREFER_DARK;
 
+    typeof(Title).ensure();
     typeof(Header).ensure();
     typeof(Controls).ensure();
   

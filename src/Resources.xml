@@ -3,6 +3,7 @@
 <gresources>
 
 <gresource prefix="/com/github/Miqueas/TapeDeck">
+  <file alias="Title.ui" compressed="true" preprocess="xml-stripblanks">ui/Title.ui</file>
   <file alias="Header.ui" compressed="true" preprocess="xml-stripblanks">ui/Header.ui</file>
   <file alias="Controls.ui" compressed="true" preprocess="xml-stripblanks">ui/Controls.ui</file>
   <file alias="AppWindow.ui" compressed="true" preprocess="xml-stripblanks">ui/AppWindow.ui</file>
