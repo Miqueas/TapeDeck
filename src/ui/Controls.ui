@@ -2,11 +2,7 @@
 
 <interface>
 
-<template class="TapeDeckControls" parent="GtkWidget">
-  <property name="layout-manager">
-    <object class="GtkBoxLayout"/>
-  </property>
-
+<template class="TapeDeckControls" parent="GtkBox">
   <!-- Playback buttons -->
   <child>
     <object class="GtkBox">
