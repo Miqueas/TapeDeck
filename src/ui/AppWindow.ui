@@ -15,6 +15,13 @@
         <object class="TapeDeckHeader" id="header"/>
       </child>
       <!-- End Header -->
+
+      <child>
+        <object class="AdwViewSwitcherBar">
+          <property name="vexpand">False</property>
+        </object>
+      </child>
+
     </object>
   </child>
 </template>
