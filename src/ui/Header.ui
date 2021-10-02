@@ -3,14 +3,14 @@
 <interface>
 
 <template class="TapeDeckHeader" parent="GtkWidget">
+  <property name="vexpand">False</property>
+
   <property name="layout-manager">
     <object class="GtkBinLayout"/>
   </property>
 
   <child>
-    <object class="AdwHeaderBar" id="_header">
-      <property name="vexpand">False</property>
-
+    <object class="AdwHeaderBar">
       <style>
         <class name="flat"/>
       </style>
