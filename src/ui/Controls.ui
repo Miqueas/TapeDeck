@@ -8,37 +8,21 @@
     <object class="GtkBox">
       <property name="orientation">horizontal</property>
 
-      <style>
-        <class name="linked"/>
-      </style>
-
       <child>
         <object class="GtkButton">
-          <property name="child">
-            <object class="GtkImage">
-              <property name="icon-name">media-seek-backward-symbolic</property>
-            </object>
-          </property>
+          <property name="icon-name">media-seek-backward-symbolic</property>
         </object>
       </child>
 
       <child>
         <object class="GtkButton">
-          <property name="child">
-            <object class="GtkImage">
-              <property name="icon-name">media-playback-start-symbolic</property>
-            </object>
-          </property>
+          <property name="icon-name">media-playback-start-symbolic</property>
         </object>
       </child>
 
       <child>
         <object class="GtkButton">
-          <property name="child">
-            <object class="GtkImage">
-              <property name="icon-name">media-seek-forward-symbolic</property>
-            </object>
-          </property>
+          <property name="icon-name">media-seek-forward-symbolic</property>
         </object>
       </child>
 
@@ -83,37 +67,21 @@
     <object class="GtkBox">
       <property name="orientation">horizontal</property>
 
-      <style>
-        <class name="linked"/>
-      </style>
-
       <child>
         <object class="GtkButton">
-          <property name="child">
-            <object class="GtkImage">
-              <property name="icon-name">media-playlist-repeat-symbolic</property>
-            </object>
-          </property>
+          <property name="icon-name">media-playlist-repeat-symbolic</property>
         </object>
       </child>
 
       <child>
         <object class="GtkButton">
-          <property name="child">
-            <object class="GtkImage">
-              <property name="icon-name">media-playlist-shuffle-symbolic</property>
-            </object>
-          </property>
+          <property name="icon-name">media-playlist-shuffle-symbolic</property>
         </object>
       </child>
 
       <child>
         <object class="GtkButton">
-          <property name="child">
-            <object class="GtkImage">
-              <property name="icon-name">audio-volume-high-symbolic</property>
-            </object>
-          </property>
+          <property name="icon-name">audio-volume-high-symbolic</property>
         </object>
       </child>
 
