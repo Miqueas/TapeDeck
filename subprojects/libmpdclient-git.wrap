@@ -1,0 +1,5 @@
+[wrap-git]
+directory=libmpdclient-git
+url=https://github.com/MusicPlayerDaemon/libmpdclient.git
+revision=master
+depth=1

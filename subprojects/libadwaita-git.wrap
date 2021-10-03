@@ -1,5 +1,5 @@
 [wrap-git]
-directory=libadwaita
+directory=libadwaita-git
 url=https://gitlab.gnome.org/GNOME/libadwaita.git
 revision=main
 depth=1
