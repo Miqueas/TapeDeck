@@ -3,6 +3,8 @@
 <interface>
 
 <template class="TapeDeckControls" parent="GtkBox">
+  <property name="can-focus">no</property>
+
   <!-- Playback buttons -->
   <child>
     <object class="GtkBox">
@@ -44,9 +46,9 @@
   <!-- Time slider -->
   <child>
     <object class="GtkScale">
-      <property name="hexpand">True</property>
+      <property name="hexpand">yes</property>
       <property name="width-request">160</property>
-      <property name="draw-value">False</property>
+      <property name="draw-value">no</property>
     </object>
   </child>
   <!-- End Time slider -->
