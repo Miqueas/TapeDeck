@@ -12,5 +12,5 @@ deps = [
   dependency('libmpdclient',  version: '>=2.19', fallback: 'libmpdclient-git')
 ]
 
-subdir('src')
 subdir('data')
+subdir('src')

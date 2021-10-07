@@ -1,15 +1,14 @@
-gnome = import('gnome')
-
 src = [
+  # GResources
+  resources,
+  # Vala sources
   'App.vala',
   'Title.vala',
   'Header.vala',
   'Controls.vala',
   'ViewItem.vala',
-  'AppWindow.vala'
+  'AppWindow.vala',
 ]
-
-src += gnome.compile_resources('Resources', 'Resources.xml')
 
 executable(meson.project_name(), src,
   dependencies: deps,

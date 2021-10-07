@@ -3,6 +3,10 @@
 <gresources>
 
 <gresource prefix="/com/github/Miqueas/TapeDeck">
+  <!-- Custom CSS -->
+  <file alias="style.css">style.css</file>
+
+  <!-- XML UI definitions -->
   <file alias="Title.ui" compressed="true" preprocess="xml-stripblanks">ui/Title.ui</file>
   <file alias="Header.ui" compressed="true" preprocess="xml-stripblanks">ui/Header.ui</file>
   <file alias="Controls.ui" compressed="true" preprocess="xml-stripblanks">ui/Controls.ui</file>
