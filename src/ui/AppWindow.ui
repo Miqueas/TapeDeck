@@ -3,27 +3,52 @@
 <interface>
 
 <template class="TapeDeckAppWindow" parent="AdwApplicationWindow">
-  <property name="default-width">900</property>
-	<property name="default-height">500</property>
+  <property name="default-width">940</property>
+	<property name="default-height">520</property>
 
   <child>
     <object class="GtkBox">
       <property name="orientation">vertical</property>
 
-      <!-- Header -->
       <child>
-        <object class="TapeDeckHeader" id="header"/>
+        <object class="TapeDeckHeader"/>
       </child>
-      <!-- End Header -->
+
+      <child>
+        <!-- TODO: change ID -->
+        <object class="AdwViewStack" id="s">
+          <property name="vexpand">yes</property>
+
+          <!-- TODO: create local and MPD views -->
+          <child>
+            <object class="AdwViewStackPage">
+              <property name="child">
+                <object class="TapeDeckViewItem"/>
+              </property>
+            </object>
+          </child>
+
+          <child>
+            <object class="AdwViewStackPage">
+              <property name="child">
+                <object class="TapeDeckViewItem"/>
+              </property>
+            </object>
+          </child>
+
+        </object>
+      </child>
 
       <child>
         <object class="AdwViewSwitcherBar">
-          <property name="vexpand">False</property>
+          <property name="vexpand">no</property>
+          <property name="stack">s</property>
         </object>
       </child>
 
     </object>
   </child>
+
 </template>
 
 </interface>
