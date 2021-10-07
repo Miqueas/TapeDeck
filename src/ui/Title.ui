@@ -10,9 +10,10 @@
   <!-- End Media artwork -->
 
   <child>
+    <!-- TODO: add ID's for title, subtitle and image widgets -->
     <object class="AdwClamp">
       <property name="valign">center</property>
-      <property name="hexpand">True</property>
+      <property name="hexpand">yes</property>
       <property name="maximum-size">380</property>
       <property name="tightening-threshold">340</property>
 
