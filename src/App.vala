@@ -1,9 +1,6 @@
 public class TapeDeck.App : Adw.Application {
   public App() {
-    Object(
-      application_id: "com.github.Miqueas.TapeDeck",
-      flags: ApplicationFlags.FLAGS_NONE
-    );
+    Object(application_id: "com.github.Miqueas.TapeDeck");
   }
 
   static int main(string[] args) {
@@ -21,6 +18,7 @@ public class TapeDeck.App : Adw.Application {
     typeof(Title).ensure();
     typeof(Header).ensure();
     typeof(Controls).ensure();
+    typeof(ViewItem).ensure();
   
     new AppWindow(this);
   }
