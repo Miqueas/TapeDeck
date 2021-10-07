@@ -13,3 +13,4 @@ deps = [
 ]
 
 subdir('src')
+subdir('data')
