@@ -6,6 +6,7 @@
   <file alias="Title.ui" compressed="true" preprocess="xml-stripblanks">ui/Title.ui</file>
   <file alias="Header.ui" compressed="true" preprocess="xml-stripblanks">ui/Header.ui</file>
   <file alias="Controls.ui" compressed="true" preprocess="xml-stripblanks">ui/Controls.ui</file>
+  <file alias="ViewItem.ui" compressed="true" preprocess="xml-stripblanks">ui/ViewItem.ui</file>
   <file alias="AppWindow.ui" compressed="true" preprocess="xml-stripblanks">ui/AppWindow.ui</file>
 </gresource>
 

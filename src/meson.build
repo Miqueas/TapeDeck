@@ -5,6 +5,7 @@ src = [
   'Title.vala',
   'Header.vala',
   'Controls.vala',
+  'ViewItem.vala',
   'AppWindow.vala'
 ]
 
