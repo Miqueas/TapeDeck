@@ -3,6 +3,10 @@
 <interface>
 
 <template class="TapeDeckViewItem" parent="GtkBox">
+  <style>
+    <class name="view_item"/>
+  </style>
+
   <child>
     <object class="GtkImage"/>
   </child>
