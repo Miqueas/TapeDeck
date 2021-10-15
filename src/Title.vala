@@ -1,5 +1,5 @@
 [GtkTemplate (ui = "/com/github/Miqueas/TapeDeck/Title.ui")]
-public class TapeDeck.Title : Gtk.Box {
+public class TapeDeck.Title : Adw.Bin {
   construct {
     var ev = new Gtk.GestureClick();
     ev.pressed.connect(this.on_pressed);
