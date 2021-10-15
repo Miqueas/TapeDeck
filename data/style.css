@@ -1,3 +1,15 @@
-.view_item {
-  /* TODO: make styles for view item widget */
+.window {
+  background: alpha(@theme_bg_color, 0);
+}
+
+.window > contents > box > separator {
+  background: @theme_bg_color;
+}
+
+.sidebar {
+  background: alpha(@theme_bg_color, 0.9);
+}
+
+.mainbox {
+  background: @theme_bg_color;
 }
