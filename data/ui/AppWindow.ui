@@ -6,43 +6,75 @@
   <property name="default-width">940</property>
 	<property name="default-height">520</property>
 
+  <style>
+    <class name="window"/>
+  </style>
+
   <child>
     <object class="GtkBox">
-      <property name="orientation">vertical</property>
+      <property name="orientation">horizontal</property>
 
+      <!-- Sidebar -->
       <child>
-        <object class="TapeDeckHeader"/>
+        <object class="TapeDeckSidebar" id="sidebar"/>
       </child>
+      <!-- End Sidebar -->
 
       <child>
-        <!-- TODO: change ID -->
-        <object class="AdwViewStack" id="s">
-          <property name="vexpand">yes</property>
-
-          <!-- TODO: create local and MPD views -->
-          <child>
-            <object class="AdwViewStackPage">
-              <property name="child">
-                <object class="TapeDeckViewItem"/>
-              </property>
-            </object>
-          </child>
-
-          <child>
-            <object class="AdwViewStackPage">
-              <property name="child">
-                <object class="TapeDeckViewItem"/>
-              </property>
-            </object>
-          </child>
-
+        <object class="GtkSeparator">
+          <property name="orientation">vertical</property>
         </object>
       </child>
 
       <child>
-        <object class="AdwViewSwitcherBar">
-          <property name="vexpand">no</property>
-          <property name="stack">s</property>
+        <object class="GtkBox">
+          <property name="orientation">vertical</property>
+          <property name="hexpand">yes</property>
+
+          <style>
+            <class name="mainbox"/>
+          </style>
+
+          <child>
+            <object class="TapeDeckHeader"/>
+          </child>
+
+          <child>
+            <object class="GtkStack" id="main_stack">
+              <property name="vexpand">yes</property>
+              <property name="transition-type">slide-up-down</property>
+
+              <child>
+                <object class="GtkStackPage">
+                  <property name="name">local</property>
+                  <property name="title">Local</property>
+                  <property name="icon-name">folder-music-symbolic</property>
+
+                  <property name="child">
+                    <object class="GtkLabel">
+                      <property name="label">Page</property>
+                    </object>
+                  </property>
+                </object>
+              </child>
+
+              <child>
+                <object class="GtkStackPage">
+                  <property name="name">mpd</property>
+                  <property name="title">MPD</property>
+                  <property name="icon-name">network-server-symbolic</property>
+
+                  <property name="child">
+                    <object class="GtkLabel">
+                      <property name="label">Page</property>
+                    </object>
+                  </property>
+                </object>
+              </child>
+
+            </object>
+          </child>
+
         </object>
       </child>
 
