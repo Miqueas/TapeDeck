@@ -32,7 +32,7 @@
           <property name="hexpand">yes</property>
 
           <style>
-            <class name="mainbox"/>
+            <class name="main-view"/>
           </style>
 
           <child>
