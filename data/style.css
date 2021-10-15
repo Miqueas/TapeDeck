@@ -1,15 +1,7 @@
 .window {
-  background: alpha(@theme_bg_color, 0);
+  background: alpha(@theme_bg_color, .9);
 }
 
-.window > contents > box > separator {
-  background: @theme_bg_color;
-}
-
-.sidebar {
-  background: alpha(@theme_bg_color, 0.9);
-}
-
-.mainbox {
+.main-view {
   background: @theme_bg_color;
 }
