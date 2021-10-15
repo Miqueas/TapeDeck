@@ -17,8 +17,10 @@ public class TapeDeck.App : Adw.Application {
 
     typeof(Title).ensure();
     typeof(Header).ensure();
+    typeof(Sidebar).ensure();
     typeof(Controls).ensure();
     typeof(ViewItem).ensure();
+    typeof(SidebarItem).ensure();
   
     new AppWindow(this);
   }
