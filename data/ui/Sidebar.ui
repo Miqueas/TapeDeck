@@ -16,6 +16,7 @@
 
   <child>
     <object class="GtkListBox">
+      <property name="selection-mode">browse</property>
       <property name="vexpand">no</property>
 
       <style>
