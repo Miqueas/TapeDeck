@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<interface>
+
+<template class="TapeDeckSidebar" parent="GtkBox">
+  <property name="orientation">vertical</property>
+  <property name="can-focus">no</property>
+
+  <style>
+    <class name="sidebar"/>
+  </style>
+
+  <child>
+    <object class="TapeDeckTitle"/>
+  </child>
+
+  <child>
+    <object class="GtkListBox">
+      <property name="vexpand">no</property>
+
+      <style>
+        <class name="navigation-sidebar"/>
+      </style>
+
+      <child>
+        <object class="GtkListBoxRow">
+          <property name="child">
+            <object class="TapeDeckSidebarItem">
+              <property name="label">Local</property>
+              <property name="icon-name">folder-music-symbolic</property>
+            </object>
+          </property>
+        </object>
+      </child>
+
+      <child>
+        <object class="GtkListBoxRow">
+          <property name="child">
+            <object class="TapeDeckSidebarItem">
+              <property name="label">Local</property>
+              <property name="icon-name">network-server-symbolic</property>
+            </object>
+          </property>
+        </object>
+      </child>
+
+      <child>
+        <object class="GtkListBoxRow">
+          <property name="child">
+            <object class="TapeDeckSidebarItem">
+              <property name="label">Local</property>
+              <property name="icon-name">folder-music-symbolic</property>
+            </object>
+          </property>
+        </object>
+      </child>
+
+      <child>
+        <object class="GtkListBoxRow">
+          <property name="child">
+            <object class="TapeDeckSidebarItem">
+              <property name="label">Playlists</property>
+              <property name="icon-name">playlist-symbolic</property>
+            </object>
+          </property>
+        </object>
+      </child>
+
+    </object>
+  </child>
+</template>
+
+</interface>
