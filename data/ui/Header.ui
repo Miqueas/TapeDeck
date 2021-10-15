@@ -7,9 +7,11 @@
 
   <child>
     <object class="AdwHeaderBar">
-      <child type="start">
-        <object class="TapeDeckTitle"/>
-      </child>
+      <property name="centering-policy">loose</property>
+
+      <style>
+        <class name="flat"/>
+      </style>
 
       <child type="title">
         <object class="AdwClamp">
