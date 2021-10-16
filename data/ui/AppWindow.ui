@@ -11,23 +11,32 @@
   </style>
 
   <child>
-    <object class="GtkBox">
+    <object class="AdwLeaflet">
       <property name="orientation">horizontal</property>
+      <property name="visible-child">__main</property>
 
       <!-- Sidebar -->
       <child>
-        <object class="TapeDeckSidebar" id="sidebar"/>
+        <object class="GtkBox">
+          <property name="orientation">horizontal</property>
+
+          <child>
+            <object class="TapeDeckSidebar" id="sidebar"/>
+          </child>
+
+          <child>
+            <object class="GtkSeparator">
+              <property name="orientation">vertical</property>
+            </object>
+          </child>
+
+        </object>
       </child>
       <!-- End Sidebar -->
 
+      <!-- Main view -->
       <child>
-        <object class="GtkSeparator">
-          <property name="orientation">vertical</property>
-        </object>
-      </child>
-
-      <child>
-        <object class="GtkBox">
+        <object class="GtkBox" id="__main">
           <property name="orientation">vertical</property>
           <property name="hexpand">yes</property>
 
@@ -77,6 +86,7 @@
 
         </object>
       </child>
+      <!-- End Main view -->
 
     </object>
   </child>
