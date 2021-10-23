@@ -17,20 +17,7 @@
 
       <!-- Sidebar -->
       <child>
-        <object class="GtkBox">
-          <property name="orientation">horizontal</property>
-
-          <child>
-            <object class="TapeDeckSidebar" id="sidebar"/>
-          </child>
-
-          <child>
-            <object class="GtkSeparator">
-              <property name="orientation">vertical</property>
-            </object>
-          </child>
-
-        </object>
+        <object class="TapeDeckSidebar" id="sidebar"/>
       </child>
       <!-- End Sidebar -->
 
