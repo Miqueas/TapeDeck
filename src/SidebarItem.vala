@@ -7,10 +7,12 @@ public class TapeDeck.SidebarItem : Gtk.Box {
   private unowned Gtk.Label _lbl;
 
   public string label { get; set; }
+  public string resource { get; set; }
   public string icon_name { get; set; }
 
   construct {
     this.bind_property("label", this._lbl, "label", BindingFlags.SYNC_CREATE);
+    this.bind_property("resource", this._img, "resource", BindingFlags.SYNC_CREATE);
     this.bind_property("icon-name", this._img, "icon-name", BindingFlags.SYNC_CREATE);
   }
 }
