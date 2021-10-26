@@ -9,9 +9,9 @@
     <object class="AdwHeaderBar">
       <property name="centering-policy">loose</property>
 
-      <style>
-        <class name="flat"/>
-      </style>
+      <child type="start">
+        <object class="TapeDeckTrackInfo"/>
+      </child>
 
       <child type="title">
         <object class="AdwClamp">
@@ -22,13 +22,6 @@
           <child>
             <object class="TapeDeckControls"/>
           </child>
-        </object>
-      </child>
-
-      <child type="end">
-        <object class="GtkButton">
-          <property name="focusable">no</property>
-          <property name="icon-name">applications-system-symbolic</property>
         </object>
       </child>
 
