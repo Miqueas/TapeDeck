@@ -6,10 +6,6 @@
   <property name="default-width">940</property>
 	<property name="default-height">520</property>
 
-  <style>
-    <class name="window"/>
-  </style>
-
   <child>
     <object class="AdwLeaflet">
       <property name="orientation">horizontal</property>
@@ -21,15 +17,17 @@
       </child>
       <!-- End Sidebar -->
 
+      <child>
+        <object class="GtkSeparator">
+          <property name="orientation">vertical</property>
+        </object>
+      </child>
+
       <!-- Main view -->
       <child>
         <object class="GtkBox" id="__main">
           <property name="orientation">vertical</property>
           <property name="hexpand">yes</property>
-
-          <style>
-            <class name="main-view"/>
-          </style>
 
           <child>
             <object class="TapeDeckHeader"/>
