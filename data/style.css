@@ -1,7 +1,0 @@
-.window {
-  background: alpha(@theme_bg_color, .9);
-}
-
-.main-view {
-  background: @theme_bg_color;
-}
