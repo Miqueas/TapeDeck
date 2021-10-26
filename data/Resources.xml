@@ -2,23 +2,25 @@
 
 <gresources>
 
-<gresource prefix="/com/github/Miqueas/TapeDeck">
+<gresource prefix="/com/github/Miqueas/TapeDeck/">
   <!-- Custom CSS -->
   <file alias="style.css">style.css</file>
 
+  <file>album_art.jpeg</file>
+
   <!-- XML UI Definitions -->
-  <file alias="Title.ui" compressed="true" preprocess="xml-stripblanks">ui/Title.ui</file>
-  <file alias="Header.ui" compressed="true" preprocess="xml-stripblanks">ui/Header.ui</file>
-  <file alias="Sidebar.ui" compressed="true" preprocess="xml-stripblanks">ui/Sidebar.ui</file>
-  <file alias="Controls.ui" compressed="true" preprocess="xml-stripblanks">ui/Controls.ui</file>
-  <file alias="ViewItem.ui" compressed="true" preprocess="xml-stripblanks">ui/ViewItem.ui</file>
-  <file alias="AppWindow.ui" compressed="true" preprocess="xml-stripblanks">ui/AppWindow.ui</file>
-  <file alias="SidebarItem.ui" compressed="true" preprocess="xml-stripblanks">ui/SidebarItem.ui</file>
+  <file alias="Header.ui">ui/Header.ui</file>
+  <file alias="Sidebar.ui">ui/Sidebar.ui</file>
+  <file alias="Controls.ui">ui/Controls.ui</file>
+  <file alias="ViewItem.ui">ui/ViewItem.ui</file>
+  <file alias="TrackInfo.ui">ui/TrackInfo.ui</file>
+  <file alias="AppWindow.ui">ui/AppWindow.ui</file>
+  <file alias="SidebarItem.ui">ui/SidebarItem.ui</file>
 </gresource>
 
 <!-- Icons -->
-<gresource prefix="/com/github/Miqueas/TapeDeck/icons">
-  <file alias="playlist2-symbolic" compressed="true" preprocess="xml-stripblanks">icons/playlist2-symbolic.svg</file>
+<gresource prefix="/com/github/Miqueas/TapeDeck/icons/scalable/multimedia/">
+  <file alias="playlist-symbolic.svg" compressed="true" preprocess="xml-stripblanks">icons/playlist2-symbolic.svg</file>
 </gresource>
 
 </gresources>

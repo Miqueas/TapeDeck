@@ -15,11 +15,11 @@ public class TapeDeck.App : Adw.Application {
     base.startup();
     // this.style_manager.color_scheme = Adw.ColorScheme.PREFER_DARK;
 
-    typeof(Title).ensure();
     typeof(Header).ensure();
     typeof(Sidebar).ensure();
     typeof(Controls).ensure();
     typeof(ViewItem).ensure();
+    typeof(TrackInfo).ensure();
     typeof(SidebarItem).ensure();
   
     new AppWindow(this);

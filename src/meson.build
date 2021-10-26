@@ -3,11 +3,11 @@ src = [
   resources,
   # Vala sources
   'App.vala',
-  'Title.vala',
   'Header.vala',
   'Sidebar.vala',
   'Controls.vala',
   'ViewItem.vala',
+  'TrackInfo.vala',
   'AppWindow.vala',
   'SidebarItem.vala'
 ]
