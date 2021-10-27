@@ -9,11 +9,11 @@
   <child>
     <object class="AdwLeaflet">
       <property name="orientation">horizontal</property>
-      <property name="visible-child">__main</property>
+      <property name="visible-child">_main</property>
 
       <!-- Sidebar -->
       <child>
-        <object class="TapeDeckSidebar" id="sidebar"/>
+        <object class="TapeDeckSidebar" id="_sidebar"/>
       </child>
       <!-- End Sidebar -->
 
@@ -25,12 +25,12 @@
 
       <!-- Main view -->
       <child>
-        <object class="GtkBox" id="__main">
+        <object class="GtkBox" id="_main">
           <property name="orientation">vertical</property>
           <property name="hexpand">yes</property>
 
           <child>
-            <object class="TapeDeckHeader"/>
+            <object class="TapeDeckHeader" id="_header"/>
           </child>
 
           <child>
@@ -77,5 +77,6 @@
   </child>
 
 </template>
+
 
 </interface>
