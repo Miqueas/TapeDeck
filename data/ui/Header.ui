@@ -3,12 +3,13 @@
 <interface>
 
 <template class="TapeDeckHeader" parent="AdwBin">
-  <property name="vexpand">no</property>
+  <style>
+    <class name="header"/>
+    <class name="no-margin"/>
+  </style>
 
   <child>
     <object class="AdwHeaderBar">
-      <property name="centering-policy">loose</property>
-
       <child type="start">
         <object class="TapeDeckTrackInfo"/>
       </child>
