@@ -6,7 +6,7 @@
   <!-- Custom CSS -->
   <file alias="style.css">style.css</file>
 
-  <file>album_art.jpeg</file>
+  <file>album_art.jpg</file>
 
   <!-- XML UI Definitions -->
   <file alias="Header.ui">ui/Header.ui</file>
