@@ -11,19 +11,20 @@
   </style>
 
   <child>
-    <object class="AdwHeaderBar">
-      <property name="centering-policy">loose</property>
+    <object class="AdwHeaderBar" id="_sidebar_header">
       <property name="show-start-title-buttons">no</property>
       <property name="show-end-title-buttons">no</property>
       
       <child type="title">
         <object class="AdwWindowTitle">
+          <property name="valign">center</property>
           <property name="title">Tape Deck</property>
         </object>
       </child>
 
       <child type="end">
         <object class="GtkButton">
+          <property name="valign">center</property>
           <property name="focusable">no</property>
           <property name="icon-name">open-menu-symbolic</property>
         </object>

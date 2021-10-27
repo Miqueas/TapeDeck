@@ -3,12 +3,12 @@
 <interface>
 
 <template class="TapeDeckTrackInfo" parent="GtkBox">
-  <property name="vexpand">no</property>
+  <property name="orientation">horizontal</property>
 
   <child>
     <object class="GtkImage" id="_img">
-      <property name="pixel-size">48</property>
-      <property name="resource">/com/github/Miqueas/TapeDeck/album_art.jpeg</property>
+      <property name="pixel-size">46</property>
+      <property name="resource">/com/github/Miqueas/TapeDeck/album_art.jpg</property>
     </object>
   </child>
 
