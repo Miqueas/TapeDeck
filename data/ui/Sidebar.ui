@@ -80,7 +80,7 @@
           <property name="child">
             <object class="TpdSidebarItem">
               <property name="label">Playlists</property>
-              <property name="icon-name">tpd-playlist</property>
+              <property name="resource">/com/github/Miqueas/TapeDeck/icons/scalable/multimedia/tpd-playlist</property>
             </object>
           </property>
         </object>
