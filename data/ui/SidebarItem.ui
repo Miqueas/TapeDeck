@@ -2,7 +2,7 @@
 
 <interface>
 
-<template class="TapeDeckSidebarItem" parent="GtkBox">
+<template class="TpdSidebarItem" parent="GtkBox">
   <property name="orientation">horizontal</property>
   <property name="spacing">8</property>
 

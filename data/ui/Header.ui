@@ -2,7 +2,7 @@
 
 <interface>
 
-<template class="TapeDeckHeader" parent="AdwBin">
+<template class="TpdHeader" parent="AdwBin">
   <style>
     <class name="header"/>
     <class name="no-margin"/>
@@ -11,7 +11,7 @@
   <child>
     <object class="AdwHeaderBar">
       <child type="start">
-        <object class="TapeDeckTrackInfo"/>
+        <object class="TpdTrackInfo"/>
       </child>
 
       <child type="title">
@@ -21,7 +21,7 @@
           <property name="tightening-threshold">580</property>
 
           <child>
-            <object class="TapeDeckControls"/>
+            <object class="TpdControls"/>
           </child>
         </object>
       </child>

@@ -1,4 +1,4 @@
-public class TapeDeck.App : Adw.Application {
+public class Tpd.App : Adw.Application {
   public App() {
     Object(application_id: "com.github.Miqueas.TapeDeck");
   }

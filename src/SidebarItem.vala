@@ -1,5 +1,5 @@
 [GtkTemplate (ui = "/com/github/Miqueas/TapeDeck/SidebarItem.ui")]
-public class TapeDeck.SidebarItem : Gtk.Box {
+public class Tpd.SidebarItem : Gtk.Box {
   [GtkChild]
   private unowned Gtk.Image _img;
 

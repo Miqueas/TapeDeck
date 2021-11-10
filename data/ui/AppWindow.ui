@@ -2,7 +2,7 @@
 
 <interface>
 
-<template class="TapeDeckAppWindow" parent="AdwApplicationWindow">
+<template class="TpdAppWindow" parent="AdwApplicationWindow">
   <property name="default-width">940</property>
 	<property name="default-height">520</property>
 
@@ -13,7 +13,7 @@
 
       <!-- Sidebar -->
       <child>
-        <object class="TapeDeckSidebar" id="_sidebar"/>
+        <object class="TpdSidebar" id="_sidebar"/>
       </child>
       <!-- End Sidebar -->
 
@@ -30,7 +30,7 @@
           <property name="hexpand">yes</property>
 
           <child>
-            <object class="TapeDeckHeader" id="_header"/>
+            <object class="TpdHeader" id="_header"/>
           </child>
 
           <child>

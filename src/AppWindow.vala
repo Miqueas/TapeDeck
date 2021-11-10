@@ -1,10 +1,10 @@
 [GtkTemplate (ui = "/com/github/Miqueas/TapeDeck/AppWindow.ui")]
-public class TapeDeck.AppWindow : Adw.ApplicationWindow {
+public class Tpd.AppWindow : Adw.ApplicationWindow {
   [GtkChild]
-  private unowned TapeDeck.Header _header;
+  private unowned Tpd.Header _header;
 
   [GtkChild]
-  private unowned TapeDeck.Sidebar _sidebar;
+  private unowned Tpd.Sidebar _sidebar;
 
   public AppWindow(App app) {
     Object(application: app);

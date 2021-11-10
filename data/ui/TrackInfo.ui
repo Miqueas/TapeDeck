@@ -2,7 +2,7 @@
 
 <interface>
 
-<template class="TapeDeckTrackInfo" parent="GtkBox">
+<template class="TpdTrackInfo" parent="GtkBox">
   <property name="orientation">horizontal</property>
 
   <child>

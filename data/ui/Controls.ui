@@ -2,7 +2,7 @@
 
 <interface>
 
-<template class="TapeDeckControls" parent="GtkBox">
+<template class="TpdControls" parent="GtkBox">
   <property name="can-focus">no</property>
 
   <!-- Playback buttons -->

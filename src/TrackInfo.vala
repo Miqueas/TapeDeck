@@ -1,5 +1,5 @@
 [GtkTemplate (ui = "/com/github/Miqueas/TapeDeck/TrackInfo.ui")]
-public class TapeDeck.TrackInfo : Gtk.Box {
+public class Tpd.TrackInfo : Gtk.Box {
   construct {
     var ev = new Gtk.GestureClick();
     ev.pressed.connect(this.on_pressed);

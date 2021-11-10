@@ -2,7 +2,7 @@
 
 <interface>
 
-<template class="TapeDeckSidebar" parent="GtkBox">
+<template class="TpdSidebar" parent="GtkBox">
   <property name="orientation">vertical</property>
   <property name="can-focus">no</property>
 
@@ -45,7 +45,7 @@
       <child>
         <object class="GtkListBoxRow">
           <property name="child">
-            <object class="TapeDeckSidebarItem">
+            <object class="TpdSidebarItem">
               <property name="label">Local</property>
               <property name="icon-name">folder-music-symbolic</property>
             </object>
@@ -56,7 +56,7 @@
       <child>
         <object class="GtkListBoxRow">
           <property name="child">
-            <object class="TapeDeckSidebarItem">
+            <object class="TpdSidebarItem">
               <property name="label">MPD</property>
               <property name="icon-name">network-server-symbolic</property>
             </object>
@@ -67,7 +67,7 @@
       <child>
         <object class="GtkListBoxRow">
           <property name="child">
-            <object class="TapeDeckSidebarItem">
+            <object class="TpdSidebarItem">
               <property name="label">Favorites</property>
               <property name="icon-name">emblem-favorite-symbolic</property>
             </object>
@@ -78,9 +78,9 @@
       <child>
         <object class="GtkListBoxRow">
           <property name="child">
-            <object class="TapeDeckSidebarItem">
+            <object class="TpdSidebarItem">
               <property name="label">Playlists</property>
-              <property name="icon-name">playlist2-symbolic</property>
+              <property name="icon-name">tpd-playlist</property>
             </object>
           </property>
         </object>
