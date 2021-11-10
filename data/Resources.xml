@@ -20,7 +20,7 @@
 
 <!-- Icons -->
 <gresource prefix="/com/github/Miqueas/TapeDeck/icons/scalable/multimedia/">
-  <file alias="playlist-symbolic.svg" compressed="true" preprocess="xml-stripblanks">icons/playlist2-symbolic.svg</file>
+  <file alias="tpd-playlist" compressed="true" preprocess="xml-stripblanks">icons/playlist2-symbolic.svg</file>
 </gresource>
 
 </gresources>
