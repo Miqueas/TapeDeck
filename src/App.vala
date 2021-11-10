@@ -13,7 +13,7 @@ public class Tpd.App : Adw.Application {
 
   protected override void startup() {
     base.startup();
-    this.style_manager.color_scheme = Adw.ColorScheme.PREFER_DARK;
+    // this.style_manager.color_scheme = Adw.ColorScheme.PREFER_DARK;
 
     typeof(Header).ensure();
     typeof(Sidebar).ensure();
