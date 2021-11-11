@@ -34,6 +34,14 @@
   </child>
 
   <child>
+    <object class="GtkLabel">
+      <property name="margin-top">8</property>
+      <property name="label">Library</property>
+      <property name="xalign">0.1</property>
+    </object>
+  </child>
+
+  <child>
     <object class="GtkListBox">
       <property name="selection-mode">browse</property>
       <property name="vexpand">no</property>
@@ -64,6 +72,25 @@
         </object>
       </child>
 
+    </object>
+  </child>
+
+  <child>
+    <object class="GtkLabel">
+      <property name="label">Activity</property>
+      <property name="xalign">0.1</property>
+    </object>
+  </child>
+
+  <child>
+    <object class="GtkListBox">
+      <property name="selection-mode">browse</property>
+      <property name="vexpand">no</property>
+
+      <style>
+        <class name="navigation-sidebar"/>
+      </style>
+
       <child>
         <object class="GtkListBoxRow">
           <property name="child">
@@ -81,6 +108,17 @@
             <object class="TpdSidebarItem">
               <property name="label">Playlists</property>
               <property name="resource">/com/github/Miqueas/TapeDeck/icons/scalable/multimedia/tpd-playlist</property>
+            </object>
+          </property>
+        </object>
+      </child>
+
+      <child>
+        <object class="GtkListBoxRow">
+          <property name="child">
+            <object class="TpdSidebarItem">
+              <property name="label">Recent</property>
+              <property name="resource">/com/github/Miqueas/TapeDeck/icons/scalable/multimedia/tpd-recent</property>
             </object>
           </property>
         </object>
