@@ -33,5 +33,5 @@ jobs:
         uses: actions/checkout@v2
       - name: Build Tape Deck
         run: |
-          meson BUILD
+          CC=gcc meson BUILD
           ninja -C BUILD
