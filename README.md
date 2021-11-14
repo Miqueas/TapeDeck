@@ -1,4 +1,5 @@
-[![License][LicenseBadge]][licenseURL]
+[![License][LicenseBadge]][LicenseURL]
+![Github Actions status, Windows][WinBuildBadge]
 
 # Tape Deck (WIP)
 
@@ -28,5 +29,6 @@ meson . _BUILD
 ninja -C _BUILD
 ```
 
-[LicenseBadge]: https://img.shields.io/badge/License-Zlib-brightgreen?style=flat
+[LicenseBadge]: https://img.shields.io/github/license/Miqueas/TapeDeck?label=License
 [LicenseURL]: https://opensource.org/licenses/Zlib
+[WinBuildBadge]: https://img.shields.io/github/workflow/status/Miqueas/TapeDeck/Windows?label=Build&logo=windows
