@@ -1,0 +1,36 @@
+name: Windows
+on: [push]
+jobs:
+  build:
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: msys2 {0}
+    steps:
+      - name: Setup MSYS
+        uses: msys2/setup-msys2@v2
+        with:
+          msystem: MINGW64
+          update: true
+          install: git base-devel
+          pacboy: gtk4:x gstreamer:x vala:x meson:x ninja:x sassc:x gobject-introspection:x
+      - name: Setup libadwaita
+        run: |
+          git clone https://gitlab.gnome.org/GNOME/libadwaita.git
+          cd libadwaita
+          meson BUILD -Dtests=false -Dexamples=false -Dinspector=false
+          ninja -C BUILD install
+          cd ..; rm -rf libadwaita
+      - name: Setup libmpdclient
+        run: |
+          git clone https://github.com/MusicPlayerDaemon/libmpdclient.git
+          cd libmpdclient
+          meson BUILD
+          ninja -C BUILD install
+          cd ..; rm -rf libmpdclient
+      - name: Setup repo
+        uses: actions/checkout@v2
+      - name: Build Tape Deck
+        run: |
+          meson BUILD
+          ninja -C BUILD
