@@ -2,6 +2,8 @@ name: Windows
 
 on:
   push:
+    branches:
+      - main
     path-ignore:
       - '**.md'
       - '**/LICENSE'
@@ -29,7 +31,9 @@ jobs:
           msystem: MINGW64
           update: true
           install: git base-devel
-          pacboy: gcc:x gtk4:x gstreamer:x vala:x meson:x ninja:x sassc:x
+          pacboy: >
+            gcc:x gtk4:x gstreamer:x vala:x meson:x
+            ninja:x sassc:x gobject-introspection:x
 
         # * Tape Deck has the .wrap files for this dependencies, so
         # * maybe i'll remove this commands later
