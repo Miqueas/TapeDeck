@@ -1,1 +1,15 @@
 image: gitpod/workspace-full-vnc
+
+tasks:
+  - name: Setup GTK 4, Vala, Meson and vala-language-server
+    init: >
+      brew install gtk4 vala meson
+      ninja libmpdclient gstreamer
+      vala-language-server
+      gst-plugins-base
+      gst-plugins-good
+
+vscode:
+  extensions:
+    - prince781.vala
+    - asabil.meson
