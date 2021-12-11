@@ -12,6 +12,7 @@ on:
       - '**.png'
       - '**.ui'
       - '**.svg'
+      - '**/.gitpod.*'
 
 jobs:
   # TODO: Write a "test" job I guess
