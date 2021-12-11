@@ -1,13 +1,5 @@
-image: gitpod/workspace-full-vnc
-
-tasks:
-  - name: Setup deps and tools
-    command: >
-      brew install gtk4 vala meson
-      ninja libmpdclient gstreamer
-      vala-language-server
-      gst-plugins-base
-      gst-plugins-good
+image:
+  file: .gitpod.Dockerfile
 
 vscode:
   extensions:
