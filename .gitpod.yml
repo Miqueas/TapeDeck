@@ -1,5 +1,18 @@
-image:
-  file: .gitpod.Dockerfile
+image: gitpod/workspace-full-vnc
+
+tasks:
+  - name: Setup Flatpak
+    command: |
+      sudo apt update; sudo apt upgrade -y
+      sudo add-apt-repository ppa:flatpak/stable -y
+      sudo apt update; sudo apt upgrade -y
+      sudo apt install flatpak -y
+
+  - name: Add Flathub repository
+    command: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+  - name: Add GNOME Nightly repository
+    command: flatpak remote-add --if-not-exists gnome-nightly https://nightly.gnome.org/gnome-nightly.flatpakrepo
 
 vscode:
   extensions:
