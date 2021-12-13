@@ -8,8 +8,8 @@ public class Tpd.App : Adw.Application {
   }
 
   protected override void activate() {
-    weak Gtk.IconTheme default_theme = Gtk.IconTheme.get_default ();
-    default_theme.add_resource_path("/com/github/Miqueas/TapeDeck");
+    // weak Gtk.IconTheme default_theme = Gtk.IconTheme.get_default ();
+    // default_theme.add_resource_path("/com/github/Miqueas/TapeDeck");
 
     this.active_window?.present();
   }
