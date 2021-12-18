@@ -14,10 +14,11 @@ on:
       - '**.svg'
       - '**/.gitpod.*'
       - 'flatpak/com.github.Miqueas.TapeDeck.yml'
+      - '.github/workflows/flatpak.yml'
 
 jobs:
-  # TODO: Write a "test" job I guess
-  build:
+  windows:
+    name: Build
     runs-on: windows-latest
 
     defaults:
@@ -37,8 +38,8 @@ jobs:
             gcc:x gtk4:x gstreamer:x vala:x meson:x
             ninja:x sassc:x gobject-introspection:x
 
-        # * Tape Deck has the .wrap files for this dependencies, so
-        # * maybe i'll remove this commands later
+        # Tape Deck has the .wrap files for this dependencies,
+        # so... maybe i'll remove this commands later
       - name: Clone, build and install libadwaita
         run: |
           git clone https://gitlab.gnome.org/GNOME/libadwaita.git
