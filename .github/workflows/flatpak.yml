@@ -13,16 +13,20 @@ on:
       - '**.ui'
       - '**.svg'
       - '**/.gitpod.*'
+      - '.github/workflows/windows.yml'
 
 jobs:
   flatpak:
-    name: Flatpak
+    name: Build
     runs-on: ubuntu-latest
+
     container:
       image: bilelmoussaoui/flatpak-github-actions:gnome-nightly
       options: --privileged
+
     strategy:
       fail-fast: false
+
     steps:
       - name: Checkout
         uses: actions/checkout@v2.3.4
