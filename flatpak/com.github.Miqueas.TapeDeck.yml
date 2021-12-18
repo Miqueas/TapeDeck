@@ -5,17 +5,14 @@ sdk: org.gnome.Sdk
 command: com.github.Miqueas.TapeDeck
 
 modules:
-  - name: libadwaita
+  - name: libmpdclient
     buildsystem: meson
-    config-opts:
-      - '-Dexamples=false'
-      - '-Dtests=false'
     sources:
       - type: git
-        url: https://gitlab.gnome.org/GNOME/libadwaita.git
-        branch: main
+        url: https://github.com/MusicPlayerDaemon/libmpdclient.git
+        branch: master
 
-  - name: Tape Deck
+  - name: TapeDeck
     buildsystem: meson
     sources:
       - type: dir
