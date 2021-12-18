@@ -1,0 +1,5 @@
+app-id: com.github.Miqueas.TapeDeck
+runtime: org.gnome.Platform
+runtime-version: master
+sdk: org.gnome.Sdk
+command: com.github.Miqueas.TapeDeck
