@@ -1,4 +1,4 @@
-image: fedora
+image: gitpod/workspace-full-vnc
 
 tasks:
   - name: Setup Flatpak
