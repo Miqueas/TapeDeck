@@ -1,10 +1,10 @@
 FROM gitpod/workspace-base:latest
 
 # Install Xvfb and Openbox window manager
-RUN sudo install-packages xvfb x11vnc xfce4
+RUN sudo install-packages xvfb x11vnc openbox
 
 # Overwrite this env variable to use a different window manager
-ENV WINDOW_MANAGER="startx"
+ENV WINDOW_MANAGER="openbox"
 
 USER root
 
