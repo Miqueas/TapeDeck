@@ -12,7 +12,8 @@ on:
       - '**.png'
       - '**.ui'
       - '**.svg'
-      - '**/.gitpod.*'
+      - '**/.gitpod.yml'
+      - '**/.gitpod/**'
       - 'flatpak/com.github.Miqueas.TapeDeck.yml'
       - '.github/workflows/flatpak.yml'
 
@@ -44,7 +45,6 @@ jobs:
         run: |
           git clone https://gitlab.gnome.org/GNOME/libadwaita.git
           cd libadwaita
-          git checkout -b gtk4.4-dep 12a10b320300ec32d480c29f26ae55c1d4b2a8b7
           CC=gcc meson BUILD -Dtests=false -Dexamples=false -Dinspector=false
           ninja -C BUILD install
           cd ..; rm -rf libadwaita
