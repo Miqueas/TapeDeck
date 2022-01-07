@@ -12,7 +12,8 @@ on:
       - '**.png'
       - '**.ui'
       - '**.svg'
-      - '**/.gitpod.*'
+      - '**/.gitpod.yml'
+      - '**/.gitpod/**'
       - '.github/workflows/windows.yml'
 
 jobs:
@@ -23,9 +24,6 @@ jobs:
     container:
       image: bilelmoussaoui/flatpak-github-actions:gnome-nightly
       options: --privileged
-
-    strategy:
-      fail-fast: false
 
     steps:
       - name: Checkout
