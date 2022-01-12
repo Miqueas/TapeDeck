@@ -45,7 +45,7 @@ jobs:
         run: |
           git clone https://gitlab.gnome.org/GNOME/libadwaita.git
           cd libadwaita
-          CC=gcc meson BUILD -Dtests=false -Dexamples=false -Dintrospection=disabled
+          CC=gcc meson BUILD -Dtests=false -Dexamples=false
           ninja -C BUILD install
           cd ..; rm -rf libadwaita
 
