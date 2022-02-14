@@ -8,8 +8,8 @@ project('com.github.Miqueas.TapeDeck', 'vala', 'c',
 deps = [
   dependency('gtk4',          version: '>=4.4'),
   dependency('gstreamer-1.0', version: '>=1.18'),
-  dependency('libadwaita-1',  version: '>=1.0', fallback: 'libadwaita-git'),
-  dependency('libmpdclient',  version: '>=2.19', fallback: 'libmpdclient-git')
+  dependency('libadwaita-1',  version: '>=1.0'),
+  dependency('libmpdclient',  version: '>=2.19')
 ]
 
 subdir('data')
