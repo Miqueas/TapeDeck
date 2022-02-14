@@ -38,16 +38,7 @@ jobs:
           pacboy: >
             gcc:x gtk4:x gstreamer:x vala:x meson:x
             ninja:x sassc:x gobject-introspection:x
-
-        # Tape Deck has the .wrap files for this dependencies,
-        # so... maybe i'll remove this commands later
-      - name: Clone, build and install libadwaita
-        run: |
-          git clone https://gitlab.gnome.org/GNOME/libadwaita.git
-          cd libadwaita
-          CC=gcc meson BUILD -Dtests=false -Dexamples=false
-          ninja -C BUILD install
-          cd ..; rm -rf libadwaita
+            libadwaita:x
 
       - name: Clone, build and install libmpdclient
         run: |
