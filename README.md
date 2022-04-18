@@ -4,12 +4,7 @@
 
 # Tape Deck (WIP)
 
-A modern, cross-platform music player, with MPD support, written in Vala
-
-![Current progress image](misc/app_progress.png)
-<p align="center">
-  <i><sup>Current progress</sup></i>
-</p>
+Modern music player, with MPD support
 
 ## Building
 
