@@ -1,16 +1,21 @@
-project('com.github.Miqueas.TapeDeck', 'vala', 'c',
+app_id = 'io.github.Miqueas.TapeDeck'
+
+project(app_id, [ 'c', 'vala' ],
   version: '0.1.0',
   license: 'Zlib',
-  meson_version: '>=0.56.0',
+  meson_version: '>= 0.56.0',
   default_options: [ 'warning_level=2' ]
 )
 
-deps = [
-  dependency('gtk4',          version: '>=4.4'),
-  dependency('gstreamer-1.0', version: '>=1.18'),
-  dependency('libadwaita-1',  version: '>=1.0'),
-  dependency('libmpdclient',  version: '>=2.19')
-]
+i18n = import('i18n')
+gnome = import('gnome')
 
 subdir('data')
 subdir('src')
+subdir('po')
+
+gnome.post_install(
+  glib_compile_schemas: true,
+  gtk_update_icon_cache: true,
+  update_desktop_database: true
+)
