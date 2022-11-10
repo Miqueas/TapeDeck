@@ -1,9 +1,0 @@
-.header windowhandle > box:first-child {
-  padding-left: 0;
-  padding-bottom: 0;
-}
-
-.no-margin image,
-.no-margin button {
-  margin: 0;
-}

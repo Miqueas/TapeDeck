@@ -1,0 +1,38 @@
+app-id: io.github.Miqueas.TapeDeck
+command: io.github.Miqueas.TapeDeck
+
+runtime: org.gnome.Platform
+runtime-version: 43
+sdk: org.gnome.Sdk//43
+
+finish-args:
+  - --share=network
+  - --share=ipc
+  - --device=dri
+  - --socket=fallback-x11
+  - --socket=wayland
+
+cleanup:
+  - /include
+  - /lib/pkgconfig
+  - /man
+  - /share/doc
+  - /share/gtk-doc
+  - /share/man
+  - /share/pkgconfig
+  - /share/vala
+  - "*.la"
+  - "*.a"
+
+modules:
+  - name: libmpdclient
+    buildsystem: meson
+    sources:
+      - type: git
+        url: https://github.com/MusicPlayerDaemon/libmpdclient.git
+  - name: TapeDeck
+    builddir: yes
+    buildsystem: meson
+    sources:
+      - type: dir
+        path: .

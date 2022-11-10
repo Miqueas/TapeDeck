@@ -1,15 +1,19 @@
+deps = [
+  dependency('libadwaita-1',  version: '>=1.0'),
+  dependency('libmpdclient',  version: '>=2.19')
+]
+
+gresource = gnome.compile_resources(
+  meson.project_name() + '.gresource',
+  meson.project_name() + '.gresource.xml'
+)
+
 src = [
   # GResources
-  resources,
+  gresource,
   # Vala sources
-  'App.vala',
-  'Header.vala',
-  'Sidebar.vala',
-  'Controls.vala',
-  'ViewItem.vala',
-  'TrackInfo.vala',
-  'AppWindow.vala',
-  'SidebarItem.vala'
+  'app.vala',
+  'app-window.vala',
 ]
 
 executable(meson.project_name(), src,

@@ -32,7 +32,7 @@ jobs:
       - name: Build Flatpak
         uses: bilelmoussaoui/flatpak-github-actions/flatpak-builder@v4
         with:
-          manifest-path: flatpak/com.github.Miqueas.TapeDeck.yml
-          bundle: com.github.Miqueas.TapeDeck.flatpak
+          manifest-path: io.github.Miqueas.TapeDeck.yml
+          bundle: io.github.Miqueas.TapeDeck.flatpak
           repository-name: gnome-nightly
           branch: main

@@ -1,6 +1,6 @@
 public class Tpd.App : Adw.Application {
   public App() {
-    Object(application_id: "com.github.Miqueas.TapeDeck");
+    Object(application_id: "io.github.Miqueas.TapeDeck");
   }
 
   static int main(string[] args) {
@@ -17,13 +17,6 @@ public class Tpd.App : Adw.Application {
   protected override void startup() {
     base.startup();
     // this.style_manager.color_scheme = Adw.ColorScheme.PREFER_DARK;
-
-    typeof(Header).ensure();
-    typeof(Sidebar).ensure();
-    typeof(Controls).ensure();
-    typeof(ViewItem).ensure();
-    typeof(TrackInfo).ensure();
-    typeof(SidebarItem).ensure();
   
     new AppWindow(this);
   }
