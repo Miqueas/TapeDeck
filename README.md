@@ -4,16 +4,14 @@
 
 # Tape Deck (WIP)
 
-Modern music player, with MPD support
+MPD client, done right.
 
 ## Building
 
 You'll need:
 
  * `meson >=0.56.0`
- * `gtk4 >=4.4`
  * `libadwaita-1 >=1.0`
- * `gstreamer-1.0 >=1.18`
  * `libmpdclient >=2.19`
 
 Then:
@@ -21,7 +19,7 @@ Then:
 ```
 git clone https://github.com/Miqueas/TapeDeck.git
 cd TapeDeck
-meson . _BUILD
+meson _BUILD
 ninja -C _BUILD
 ```
 
