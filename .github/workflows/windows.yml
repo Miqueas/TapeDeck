@@ -36,9 +36,9 @@ jobs:
           update: true
           install: git base-devel
           pacboy: >
-            gcc:x gtk4:x gstreamer:x vala:x meson:x
-            ninja:x sassc:x gobject-introspection:x
-            libadwaita:x
+            gcc:x gtk4:x vala:x meson:x
+            ninja:x gobject-introspection:x
+            libadwaita:x python-gobject:x
 
       - name: Clone, build and install libmpdclient
         run: |
