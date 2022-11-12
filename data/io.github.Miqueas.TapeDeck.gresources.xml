@@ -3,6 +3,7 @@
 <gresources>
 
 <gresource prefix="/io/github/Miqueas/TapeDeck/">
+  <file>ui/app-window.ui</file>
 </gresource>
 
 </gresources>

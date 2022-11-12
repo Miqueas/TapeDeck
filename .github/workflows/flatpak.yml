@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image: bilelmoussaoui/flatpak-github-actions:gnome-nightly
+      image: bilelmoussaoui/flatpak-github-actions:gnome
       options: --privileged
 
     steps:
@@ -34,5 +34,5 @@ jobs:
         with:
           manifest-path: io.github.Miqueas.TapeDeck.yml
           bundle: io.github.Miqueas.TapeDeck.flatpak
-          repository-name: gnome-nightly
+          repository-name: gnome
           branch: main
