@@ -10,11 +10,12 @@ on:
       - '**.jpg'
       - '**.jpeg'
       - '**.png'
-      - '**.ui'
+      - '**.blp'
       - '**.svg'
       - '**/.gitpod.yml'
       - '**/.gitpod/**'
       - '.github/workflows/windows.yml'
+  pull_request:
 
 jobs:
   flatpak:
@@ -22,17 +23,15 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image: bilelmoussaoui/flatpak-github-actions:gnome
+      image: bilelmoussaoui/flatpak-github-actions
       options: --privileged
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2.3.4
+        uses: actions/checkout@v2
 
       - name: Build Flatpak
-        uses: bilelmoussaoui/flatpak-github-actions/flatpak-builder@v4
+        uses: flatpak/flatpak-github-actions/flatpak-builder@v4
         with:
           manifest-path: io.github.Miqueas.TapeDeck.yml
           bundle: io.github.Miqueas.TapeDeck.flatpak
-          repository-name: gnome
-          branch: main
