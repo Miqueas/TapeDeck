@@ -30,6 +30,11 @@ modules:
     sources:
       - type: git
         url: https://github.com/MusicPlayerDaemon/libmpdclient.git
+  - name: blueprint-compiler
+    buildsystem: meson
+    sources:
+      - type: git
+        url: https://gitlab.gnome.org/jwestman/blueprint-compiler.git
   - name: TapeDeck
     buildsystem: meson
     sources:
