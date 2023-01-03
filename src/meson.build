@@ -1,6 +1,6 @@
 deps = [
   dependency('libadwaita-1',  version: '>=1.0'),
-  dependency('libmpdclient',  version: '>=2.19')
+  dependency('libmpdclient')
 ]
 
 src = [
