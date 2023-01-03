@@ -141,4 +141,22 @@ namespace Mpd {
     CONDUCTOR,
     COUNT
   }
+
+  [Compact]
+  [CCode (cname = "struct mpd_async", free_function = "mpd_async_free", cprefix = "mpd_async_")]
+  public class Async {
+    public Async(int fd);
+    public Mpd.Error get_error();
+    public unowned string? get_error_message();
+    public int get_system_error();
+    public int get_fd();
+    public bool set_keepalive(bool keepalive);
+    public Mpd.AsyncEvent events();
+    public bool io(Mpd.AsyncEvent events);
+    public bool send_command_v(string command, va_list args);
+    public bool send_command(string command, ...);
+    public string? recv_line();
+    // Not sure how to translate this one
+    // public size_t recv_raw(void *dest, size_t length);
+  }
 }
