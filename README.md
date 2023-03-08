@@ -10,7 +10,7 @@ MPD client, done right.
 
 You'll need:
 
- * `meson >=0.56.0`
+ * `ninja >=1.11.1`
  * `libadwaita-1 >=1.0`
  * `libmpdclient >=2.19`
 
@@ -19,8 +19,7 @@ Then:
 ```
 git clone https://github.com/Miqueas/TapeDeck.git
 cd TapeDeck
-meson _BUILD
-ninja -C _BUILD
+ninja
 ```
 
 [LicenseBadge]: https://img.shields.io/github/license/Miqueas/TapeDeck?label=License
