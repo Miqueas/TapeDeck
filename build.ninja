@@ -1,0 +1,20 @@
+appID = io.github.Miqueas.TapeDeck
+appFlags = -d:release
+
+rule bp
+  command = blueprint-compiler batch-compile $out $out $in
+
+rule gr
+  command = glib-compile-resources --sourcedir data/ $in
+
+rule nim
+  command = nim c $appFlags -o:$out $in
+
+build data/ui/: bp data/ui/app-window.blp
+  description = Generating GUI
+
+build data/: gr data/$appID.gresource.xml | data/ui/
+  description = Generating GResource
+
+build $appID: nim src/app.nim | data/
+  description = Building Tape Deck
