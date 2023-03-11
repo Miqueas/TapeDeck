@@ -1,27 +1,37 @@
 appID = io.github.Miqueas.TapeDeck
 appFlags = -d:release
-appResources = src/resources.nim
+appAssetsFileName = src/resources.nim
+appTempAssetsFileName = src/_r.nim
+appBuildFiles = .ninja_log data/ $appTempAssetsFileName $appAssetsFileName $appID
 
 rule blueprints
-  command = blueprint-compiler batch-compile $out blueprints/ $in
+  command = blueprint-compiler batch-compile data/ui/ blueprints/ $in
 
 rule assets
-  command = nimassets -d=data/ -o=$out
+  command = nimassets -d=data/ -o=$appTempAssetsFileName
 
 rule sed
-  command = sed "s/data\///g" $in > $out
+  command = sed "s/data\///g" $appTempAssetsFileName > $appAssetsFileName
 
 rule nim
   command = nim c $appFlags -o:$out $in
 
-build data/ui/: blueprints blueprints/app-window.blp
+rule rm
+  command = rm -rf $appBuildFiles
+
+build gui: blueprints blueprints/app-window.blp
   description = Generating GtkBuilder XML GUI definitions from Blueprint files
 
-build src/_r.nim: assets | data/ui/
+build tempAssets: assets | gui
   description = Bundling application resources using nimassets
 
-build $appResources: sed src/_r.nim
+build assetsCleanup: sed | tempAssets
   description = Removing the 'data/' prefix fron resources
 
-build $appID: nim src/app.nim | $appResources
+build $appID: nim src/app.nim | assetsCleanup
   description = Compiling Tape Deck
+
+build clean: rm
+  description = Cleaning up
+
+default gui tempAssets assetsCleanup $appID
