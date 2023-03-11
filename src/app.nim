@@ -1,4 +1,5 @@
 import gintro/[gtk4, adw, gobject, gio]
+import resources
 
 const appID = "io.github.Miqueas.TapeDeck"
 
