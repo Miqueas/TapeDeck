@@ -1,20 +1,27 @@
 appID = io.github.Miqueas.TapeDeck
 appFlags = -d:release
+appResources = src/resources.nim
 
-rule bp
-  command = blueprint-compiler batch-compile $out $out $in
+rule blueprints
+  command = blueprint-compiler batch-compile $out blueprints/ $in
 
-rule gr
-  command = glib-compile-resources --sourcedir data/ $in
+rule assets
+  command = nimassets -d=data/ -o=$out
+
+rule sed
+  command = sed "s/data\///g" $in > $out
 
 rule nim
   command = nim c $appFlags -o:$out $in
 
-build data/ui/: bp data/ui/app-window.blp
-  description = Generating GUI
+build data/ui/: blueprints blueprints/app-window.blp
+  description = Generating GtkBuilder XML GUI definitions from Blueprint files
 
-build data/: gr data/$appID.gresource.xml | data/ui/
-  description = Generating GResource
+build src/_r.nim: assets | data/ui/
+  description = Bundling application resources using nimassets
 
-build $appID: nim src/app.nim | data/
-  description = Building Tape Deck
+build $appResources: sed src/_r.nim
+  description = Removing the 'data/' prefix fron resources
+
+build $appID: nim src/app.nim | $appResources
+  description = Compiling Tape Deck
