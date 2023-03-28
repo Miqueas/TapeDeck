@@ -1,5 +1,4 @@
 appID = io.github.Miqueas.TapeDeck
-appFlags = -d:release --hints:off
 appAssetsFileName = src/resources.nim
 appTempAssetsFileName = src/_r.nim
 appBuildFiles = data/ $appTempAssetsFileName $appAssetsFileName $appID
@@ -14,7 +13,7 @@ rule sed
   command = sed "s/data\///g" $appTempAssetsFileName > $appAssetsFileName
 
 rule nim
-  command = nim c $appFlags -o:$out $in
+  command = nim c -o:$out $in
 
 rule rm
   command = rm -rf $appBuildFiles

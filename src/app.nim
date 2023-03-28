@@ -1,6 +1,14 @@
 import gintro/[gtk4, adw, gobject, gio]
+import mpdclient
 
 const appID = "io.github.Miqueas.TapeDeck"
+var playerThread: Thread[void]
+
+proc playerThreadProc {.thread.} =
+  let client = newMPDClient()
+
+  while client.idle(subPlayer) == subPlayer:
+    echo "E"
 
 proc onStartup(self: adw.Application) =
   let
@@ -31,7 +39,6 @@ proc onStartup(self: adw.Application) =
   playbackNextButton.addCssClass(cstring("circular"))
 
   playbackButtonsBox.halign = Align.center
-  #playbackButtonsBox.addCssClass(cstring("linked"))
   playbackButtonsBox.append(playbackPrevButton)
   playbackButtonsBox.append(playbackPlayButton)
   playbackButtonsBox.append(playbackNextButton)
@@ -49,12 +56,18 @@ proc onStartup(self: adw.Application) =
   win.content = mainBox
   win.setDefaultSize(400, 300)
 
+  playerThread.createThread(playerThreadProc)
+
 proc onActivate(self: adw.Application) =
   let win = self.activeWindow()
   win.present()
 
+proc onShutdown(self: adw.Application) =
+  echo "Shutting down!"
+
 let app = adw.newApplication(appID, ApplicationFlagsDefaultFlags)
 app.connect("startup", onStartup)
 app.connect("activate", onActivate)
+app.connect("shutdown", onShutdown)
 
 discard app.run()
