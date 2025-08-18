@@ -1,10 +1,6 @@
-[![License][LicenseBadge]][LicenseURL]
-![Github Actions status, Windows][WinBuildBadge]
-![Github Actions status, Flatpak][FlatpakBuildBadge]
-
 # Tape Deck (WIP)
 
-MPD client, done right.
+GTK MPD client
 
 ## Building
 
@@ -14,16 +10,17 @@ You'll need:
  * `libadwaita-1 >=1.0`
  * `libmpdclient >=2.19`
 
+Install them on your systyem using you preferred method. If you use Arch Linux, you can simply do:
+
+```bash
+pacman -S libmpdclient libadwaita
+```
+
 Then:
 
 ```
 git clone https://github.com/Miqueas/TapeDeck.git
 cd TapeDeck
-meson _BUILD
+meson setup _BUILD .
 ninja -C _BUILD
 ```
-
-[LicenseBadge]: https://img.shields.io/github/license/Miqueas/TapeDeck?label=License
-[LicenseURL]: https://opensource.org/licenses/Zlib
-[WinBuildBadge]: https://img.shields.io/github/actions/workflow/status/Miqueas/TapeDeck/windows.yml?label=Build&logo=windows
-[FlatpakBuildBadge]: https://img.shields.io/github/actions/workflow/status/Miqueas/TapeDeck/flatpak.yml?label=Build&logo=linux&logoColor=white
