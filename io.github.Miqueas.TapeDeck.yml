@@ -2,8 +2,8 @@ app-id: io.github.Miqueas.TapeDeck
 command: io.github.Miqueas.TapeDeck
 
 runtime: org.gnome.Platform
-runtime-version: "43"
-sdk: org.gnome.Sdk//43
+runtime-version: "48"
+sdk: org.gnome.Sdk//48
 
 finish-args:
   - --share=network
