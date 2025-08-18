@@ -4,21 +4,13 @@ deps = [
 ]
 
 src = [
-  # Vala sources
-  'app.vala',
-  'app-window.vala',
-  'track-info.vala',
-  # GResources
-  gres
+  'app.c',
+  'main.c',
 ]
 
 executable(meson.project_name(), src,
-  vala_args: [
-    '--target-glib=2.50',
-    '--gresourcesdir=' + gres_dir
-  ],
-  dependencies: deps,
   install: true,
+  dependencies: deps,
   # Windows specific, see the Meson doc for details
   # win_subsystem: 'windows'
 )
