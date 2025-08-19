@@ -1,6 +1,10 @@
 #ifndef __UTILS_H__
 #define __UTILS_H__
 
+#include <glib.h>
+
+G_BEGIN_DECLS
+
 #if !defined(__clang__) && defined(__GNUC__) && (__GNUC__ >= 14)
   #define PUSH_IGNORE_DISCARDS_VOLATILE \
     _Pragma("GCC diagnostic push") \
@@ -20,5 +24,7 @@
 #else
   #define POP_IGNORE_DISCARDS_VOLATILE /* nothing */
 #endif
+
+G_END_DECLS
 
 #endif

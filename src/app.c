@@ -20,7 +20,7 @@ static GType tpd_app_get_type_once(void);
 TpdApp* tpd_app_new(void) {
   TpdApp *self = (TpdApp *) g_object_new(
     TPD_TYPE_APP,
-    "application-id", APP_ID,
+    "application-id", TPD_APP_ID,
     NULL
   );
 
