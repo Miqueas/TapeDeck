@@ -3,7 +3,7 @@
 
 #include "app.h"
 #include "utils.h"
-#include "app-window.h"
+#include "window.h"
 
 static gpointer tpd_window_parent_class = NULL;
 
