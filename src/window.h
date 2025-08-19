@@ -31,8 +31,7 @@ struct _TpdWindowClass {
 
 GType tpd_window_get_type (void) G_GNUC_CONST;
 G_DEFINE_AUTOPTR_CLEANUP_FUNC(TpdWindow, g_object_unref)
-TpdWindow* tpd_window_new (TpdApp* app);
-TpdWindow* tpd_window_construct(GType object_type, TpdApp* app);
+TpdWindow* tpd_window_new(TpdApp* app);
 
 G_END_DECLS
 
