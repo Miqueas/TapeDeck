@@ -35,14 +35,18 @@ static void tpd_app_do_activate(GApplication *base) {
 }
 
 static void tpd_app_do_startup(GApplication *base) {
-	TpdApp *self = TPD_APP(base);
-  AdwStyleManager *manager;
+	TpdApp* self = TPD_APP(base);
+  AdwStyleManager* manager;
 
 	G_APPLICATION_CLASS(tpd_app_parent_class)->startup(G_APPLICATION(self));
 	manager = adw_application_get_style_manager(ADW_APPLICATION(self));
 	adw_style_manager_set_color_scheme(manager, ADW_COLOR_SCHEME_PREFER_DARK);
 
-  tpd_app_window_new(self);
+  // By giving `self` to `tpd_window_new`, the window gets associated with the
+  // application automatically.
+  TpdWindow* window = tpd_window_new(self);
+  g_object_ref_sink(window);
+  if (window != NULL) g_object_unref(window);
 }
 
 static void tpd_app_class_init(TpdAppClass *klass, gpointer _) {
@@ -80,6 +84,9 @@ static GType tpd_app_get_type_once (void) {
 GType tpd_app_get_type(void) {
 	static volatile gsize tpd_app_type_id__once = 0;
 
+  // I'm not an expert but: from what I know about `volatile`, I prefer the
+  // compiler to ignore that calling `g_once_init_enter` discards the qualifier,
+  // than make it a non-volatile variable.
   PUSH_IGNORE_DISCARDS_VOLATILE
   if (g_once_init_enter(&tpd_app_type_id__once)) {
   POP_IGNORE_DISCARDS_VOLATILE
