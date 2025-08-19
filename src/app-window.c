@@ -5,13 +5,13 @@
 #include "utils.h"
 #include "app-window.h"
 
-static gpointer tpd_app_window_parent_class = NULL;
+static gpointer tpd_window_parent_class = NULL;
 
-static GType tpd_app_window_get_type_once (void);
+static GType tpd_window_get_type_once (void);
 
-TpdAppWindow* tpd_app_window_new(TpdApp* app) {
-  TpdAppWindow *self = (TpdAppWindow*) g_object_new(
-    TPD_TYPE_APP_WINDOW,
+TpdWindow* tpd_window_new(TpdApp* app) {
+  TpdWindow *self = (TpdWindow*) g_object_new(
+    TPD_TYPE_WINDOW,
     "application", app,
     NULL
   );
@@ -19,20 +19,20 @@ TpdAppWindow* tpd_app_window_new(TpdApp* app) {
 	return self;
 }
 
-static void tpd_app_window_class_init(TpdAppWindowClass *klass, gpointer _) {
-	tpd_app_window_parent_class = g_type_class_peek_parent(klass);
+static void tpd_window_class_init(TpdWindowClass *klass, gpointer _) {
+	tpd_window_parent_class = g_type_class_peek_parent(klass);
 }
 
 static GType
-tpd_app_window_get_type_once (void) {
+tpd_window_get_type_once (void) {
 	static const GTypeInfo type_info = {
-    .class_size = sizeof (TpdAppWindowClass),
+    .class_size = sizeof (TpdWindowClass),
     .base_init = (GBaseInitFunc) NULL,
     .base_finalize = (GBaseFinalizeFunc) NULL,
-    .class_init = (GClassInitFunc) tpd_app_window_class_init,
+    .class_init = (GClassInitFunc) tpd_window_class_init,
     .class_finalize = (GClassFinalizeFunc) NULL,
     .class_data = NULL,
-    .instance_size = sizeof (TpdAppWindow),
+    .instance_size = sizeof (TpdWindow),
     .n_preallocs = 0,
     .instance_init = (GInstanceInitFunc) NULL,
     .value_table = NULL
@@ -41,7 +41,7 @@ tpd_app_window_get_type_once (void) {
 	GType tpd_app_window_type_id;
 	tpd_app_window_type_id = g_type_register_static(
     adw_application_window_get_type(),
-    "TpdAppWindow",
+    "TpdWindow",
     &type_info,
     0
   );
@@ -49,15 +49,15 @@ tpd_app_window_get_type_once (void) {
 	return tpd_app_window_type_id;
 }
 
-GType tpd_app_window_get_type (void) {
-	static volatile gsize tpd_app_window_type_id__once = 0;
+GType tpd_window_get_type (void) {
+	static volatile gsize tpd_window_type_id__once = 0;
 
   PUSH_IGNORE_DISCARDS_VOLATILE
-	if (g_once_init_enter (&tpd_app_window_type_id__once)) {
+	if (g_once_init_enter (&tpd_window_type_id__once)) {
   POP_IGNORE_DISCARDS_VOLATILE
-		GType tpd_app_window_type_id;
-		tpd_app_window_type_id = tpd_app_window_get_type_once ();
-		g_once_init_leave (&tpd_app_window_type_id__once, tpd_app_window_type_id);
+		GType tpd_window_type_id;
+		tpd_window_type_id = tpd_window_get_type_once ();
+		g_once_init_leave (&tpd_window_type_id__once, tpd_window_type_id);
 	}
-	return tpd_app_window_type_id__once;
+	return tpd_window_type_id__once;
 }
