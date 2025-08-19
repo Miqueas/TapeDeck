@@ -5,7 +5,7 @@ deps = [
 
 src = [
   'app.c',
-  'app-window.c',
+  'window.c',
   'main.c',
 ]
 

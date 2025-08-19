@@ -9,7 +9,7 @@
 #include "app.h"
 #include "utils.h"
 #include "consts.h"
-#include "app-window.h"
+#include "window.h"
 
 static gpointer tpd_app_parent_class = NULL;
 
