@@ -1,11 +1,3 @@
-#include <gio/gio.h>
-#include <glib-object.h>
-#include <stdlib.h>
-#include <string.h>
-#include <glib.h>
-#include <gtk/gtk.h>
-#include <adwaita.h>
-
 #include "app.h"
 #include "utils.h"
 #include "consts.h"

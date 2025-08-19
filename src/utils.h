@@ -25,6 +25,8 @@ G_BEGIN_DECLS
   #define POP_IGNORE_DISCARDS_VOLATILE /* nothing */
 #endif
 
+#define CLEAR(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
+
 G_END_DECLS
 
 #endif

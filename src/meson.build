@@ -4,8 +4,9 @@ deps = [
 ]
 
 src = [
-  'app.c',
+  'header.c',
   'window.c',
+  'app.c',
   'main.c',
 ]
 

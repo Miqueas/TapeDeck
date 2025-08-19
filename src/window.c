@@ -1,6 +1,3 @@
-#include <glib-object.h>
-#include <glib.h>
-
 #include "app.h"
 #include "utils.h"
 #include "window.h"

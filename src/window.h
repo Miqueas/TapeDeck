@@ -4,8 +4,6 @@
 #define __WINDOW_H__
 
 #include <adwaita.h>
-#include <glib-object.h>
-#include <glib.h>
 
 G_BEGIN_DECLS
 
