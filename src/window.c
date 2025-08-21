@@ -8,7 +8,7 @@
 static gpointer tpd_window_parent_class = NULL;
 
 TpdWindow* tpd_window_new(TpdApp* app) {
-  TpdWindow *self = (TpdWindow*) g_object_new(
+  TpdWindow* self = (TpdWindow*) g_object_new(
     TPD_TYPE_WINDOW,
     "application", app,
     NULL
@@ -35,8 +35,11 @@ static void tpd_window_do_constructed(GObject* base) {
   GtkStack* mainStack = self->mainStack;
   TpdHeader* header = tpd_header_new();
   TpdInfoBox* infoBox = tpd_info_box_new();
+  // TpdQueryBox* queryBox = tpd_query_box_new();
 
   g_object_set(listStack, "height-request", 400, NULL);
+  gtk_widget_set_vexpand(GTK_WIDGET(listStack), TRUE);
+  gtk_widget_set_hexpand(GTK_WIDGET(listStack), TRUE);
   gtk_stack_add_titled(listStack, GTK_WIDGET(queueView), "queue", "Now Playing");
   gtk_stack_add_titled(listStack, GTK_WIDGET(databaseView), "database", "Library");
 
@@ -49,15 +52,20 @@ static void tpd_window_do_constructed(GObject* base) {
   gtk_widget_set_margin_bottom(GTK_WIDGET(mainBox), 12);
   g_object_ref_sink(header);
   g_object_ref_sink(infoBox);
+  // g_object_ref_sink(queryBox);
   gtk_box_append(mainBox, GTK_WIDGET(header));
   gtk_box_append(mainBox, GTK_WIDGET(infoBox));
+  // gtk_box_append(mainBox, GTK_WIDGET(queryBox));
+  gtk_box_append(mainBox, GTK_WIDGET(listStack));
+  gtk_box_append(mainBox, GTK_WIDGET(listStackSwitcher));
   CLEAR(header);
   CLEAR(infoBox);
+  // CLEAR(queryBox);
 
-  gtk_stack_add_named(mainStack, GTK_WIDGET(mainBox), "main_view");
+  gtk_stack_add_named(mainStack, GTK_WIDGET(mainBox), "main");
 
   gtk_window_set_title(GTK_WINDOW(self), TPD_APP_TITLE);
-  gtk_window_set_resizable(GTK_WINDOW(self), FALSE);
+  // gtk_window_set_resizable(GTK_WINDOW(self), FALSE);
   adw_application_window_set_content(
     ADW_APPLICATION_WINDOW(self),
     GTK_WIDGET(mainStack)
@@ -87,7 +95,7 @@ static void tpd_window_instance_init(TpdWindow* self, gpointer klass) {
   GtkWidget* databaseView = gtk_list_view_new(NULL, NULL);
   GtkWidget* listStack = gtk_stack_new();
   GtkWidget* listStackSwitcher = gtk_stack_switcher_new();
-  GtkWidget* mainBox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
+  GtkWidget* mainBox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 10);
   GtkWidget* mainStack = gtk_stack_new();
 
   g_object_ref_sink(queueView);
@@ -105,8 +113,7 @@ static void tpd_window_instance_init(TpdWindow* self, gpointer klass) {
   self->mainStack = GTK_STACK(mainStack);
 }
 
-static GType
-tpd_window_get_type_once (void) {
+static GType tpd_window_get_type_once(void) {
   static const GTypeInfo type_info = {
     .class_size = sizeof (TpdWindowClass),
     .base_init = (GBaseInitFunc) NULL,
@@ -131,7 +138,7 @@ tpd_window_get_type_once (void) {
   return tpd_app_window_type_id;
 }
 
-GType tpd_window_get_type (void) {
+GType tpd_window_get_type(void) {
   static volatile gsize tpd_window_type_id__once = 0;
 
   // I'm not an expert but: from what I know about `volatile`, I prefer the

@@ -24,17 +24,16 @@ static void tpd_app_do_activate(GApplication *base) {
 
 static void tpd_app_do_startup(GApplication *base) {
 	TpdApp* self = TPD_APP(base);
-  AdwStyleManager* manager;
+  // AdwStyleManager* manager = adw_application_get_style_manager(
+  //  ADW_APPLICATION(self)
+  // );
 
 	G_APPLICATION_CLASS(tpd_app_parent_class)->startup(G_APPLICATION(self));
-	manager = adw_application_get_style_manager(ADW_APPLICATION(self));
-	adw_style_manager_set_color_scheme(manager, ADW_COLOR_SCHEME_PREFER_DARK);
+	// adw_style_manager_set_color_scheme(manager, ADW_COLOR_SCHEME_PREFER_DARK);
 
-  // By giving `self` to `tpd_window_new`, the window gets associated with the
-  // application automatically.
   TpdWindow* window = tpd_window_new(self);
   g_object_ref_sink(window);
-  if (window != NULL) g_object_unref(window);
+  CLEAR(window);
 }
 
 static void tpd_app_class_init(TpdAppClass *klass, gpointer _) {
