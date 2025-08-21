@@ -1,10 +1,10 @@
 #include "app.h"
 #include "utils.h"
+#include "consts.h"
+#include "header.h"
 #include "window.h"
 
 static gpointer tpd_window_parent_class = NULL;
-
-static GType tpd_window_get_type_once (void);
 
 TpdWindow* tpd_window_new(TpdApp* app) {
   TpdWindow *self = (TpdWindow*) g_object_new(
@@ -16,8 +16,88 @@ TpdWindow* tpd_window_new(TpdApp* app) {
   return self;
 }
 
+static gboolean tpd_window_do_close_request(GtkWindow* base) {
+  TpdWindow* self = TPD_WINDOW(base);
+  GtkApplication* app = gtk_window_get_application(GTK_WINDOW(self));
+  // TODO: If the "keep running in the background" option is enabled, don't quit
+  g_application_quit(G_APPLICATION(app));
+  return FALSE;
+}
+
+static void tpd_window_do_constructed(GObject* base) {
+  TpdWindow* self = TPD_WINDOW(base);
+  GtkStack* listStack = self->listStack;
+  GtkListView* queueView = self->queueView;
+  GtkListView* databaseView = self->databaseView;
+  GtkStackSwitcher* listStackSwitcher = self->listStackSwitcher;
+  GtkBox* mainBox = self->mainBox;
+  GtkStack* mainStack = self->mainStack;
+  TpdHeader* header = tpd_header_new();
+
+  g_object_set(listStack, "height-request", 400, NULL);
+  gtk_stack_add_titled(listStack, GTK_WIDGET(queueView), "queue", "Now Playing");
+  gtk_stack_add_titled(listStack, GTK_WIDGET(databaseView), "database", "Library");
+
+  gtk_stack_switcher_set_stack(listStackSwitcher, listStack);
+  gtk_widget_set_halign(GTK_WIDGET(listStackSwitcher), GTK_ALIGN_CENTER);
+
+  gtk_widget_set_margin_start(GTK_WIDGET(mainBox), 12);
+  gtk_widget_set_margin_end(GTK_WIDGET(mainBox), 12);
+  gtk_widget_set_margin_top(GTK_WIDGET(mainBox), 12);
+  gtk_widget_set_margin_bottom(GTK_WIDGET(mainBox), 12);
+  g_object_ref_sink(header);
+  gtk_box_append(mainBox, GTK_WIDGET(header));
+  CLEAR(header);
+
+  gtk_stack_add_named(mainStack, GTK_WIDGET(mainBox), "main_view");
+
+  gtk_window_set_title(GTK_WINDOW(self), TPD_APP_TITLE);
+  gtk_window_set_resizable(GTK_WINDOW(self), FALSE);
+  adw_application_window_set_content(
+    ADW_APPLICATION_WINDOW(self),
+    GTK_WIDGET(mainStack)
+  );
+}
+
+static void tpd_window_finalize(GObject* obj) {
+  TpdWindow* self = TPD_WINDOW(obj);
+  CLEAR(self->queueView);
+  CLEAR(self->databaseView);
+  CLEAR(self->listStack);
+  CLEAR(self->listStackSwitcher);
+  CLEAR(self->mainBox);
+  CLEAR(self->mainStack);
+  G_OBJECT_CLASS(tpd_window_parent_class)->finalize(obj);
+}
+
 static void tpd_window_class_init(TpdWindowClass *klass, gpointer _) {
   tpd_window_parent_class = g_type_class_peek_parent(klass);
+  GTK_WINDOW_CLASS(klass)->close_request = tpd_window_do_close_request;
+  G_OBJECT_CLASS(klass)->constructed = tpd_window_do_constructed;
+  G_OBJECT_CLASS(klass)->finalize = tpd_window_finalize;
+}
+
+static void tpd_window_instance_init(TpdWindow* self, gpointer klass) {
+  GtkWidget* queueView = gtk_list_view_new(NULL, NULL);
+  GtkWidget* databaseView = gtk_list_view_new(NULL, NULL);
+  GtkWidget* listStack = gtk_stack_new();
+  GtkWidget* listStackSwitcher = gtk_stack_switcher_new();
+  GtkWidget* mainBox = gtk_box_new(GTK_ORIENTATION_VERTICAL, 0);
+  GtkWidget* mainStack = gtk_stack_new();
+
+  g_object_ref_sink(queueView);
+  g_object_ref_sink(databaseView);
+  g_object_ref_sink(listStack);
+  g_object_ref_sink(listStackSwitcher);
+  g_object_ref_sink(mainBox);
+  g_object_ref_sink(mainStack);
+
+  self->queueView = GTK_LIST_VIEW(queueView);
+  self->databaseView = GTK_LIST_VIEW(databaseView);
+  self->listStack = GTK_STACK(listStack);
+  self->listStackSwitcher = GTK_STACK_SWITCHER(listStackSwitcher);
+  self->mainBox = GTK_BOX(mainBox);
+  self->mainStack = GTK_STACK(mainStack);
 }
 
 static GType
@@ -31,7 +111,7 @@ tpd_window_get_type_once (void) {
     .class_data = NULL,
     .instance_size = sizeof (TpdWindow),
     .n_preallocs = 0,
-    .instance_init = (GInstanceInitFunc) NULL,
+    .instance_init = (GInstanceInitFunc) tpd_window_instance_init,
     .value_table = NULL
   };
 
