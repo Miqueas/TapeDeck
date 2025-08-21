@@ -19,12 +19,18 @@ typedef struct _TpdWindowClass TpdWindowClass;
 typedef struct _TpdWindowPrivate TpdWindowPrivate;
 
 struct _TpdWindow {
-	AdwApplicationWindow parent_instance;
-	TpdWindowPrivate * priv;
+  AdwApplicationWindow parent_instance;
+  TpdWindowPrivate * priv;
+  GtkListView* queueView;
+  GtkListView* databaseView;
+  GtkStack* listStack;
+  GtkStackSwitcher* listStackSwitcher;
+  GtkBox* mainBox;
+  GtkStack* mainStack;
 };
 
 struct _TpdWindowClass {
-	AdwApplicationWindowClass parent_class;
+  AdwApplicationWindowClass parent_class;
 };
 
 GType tpd_window_get_type (void) G_GNUC_CONST;
