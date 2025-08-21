@@ -32,7 +32,7 @@ TpdHeader* tpd_header_new (void) {
 
 static void tpd_header_class_init (TpdHeaderClass *klass, gpointer _) {
   tpd_header_parent_class = g_type_class_peek_parent(klass);
-  G_OBJECT_CLASS(klass)->constructed = (void (*) (GObject*)) tpd_header_do_constructed;
+  G_OBJECT_CLASS(klass)->constructed = tpd_header_do_constructed;
   G_OBJECT_CLASS(klass)->finalize = tpd_header_finalize;
 }
 
