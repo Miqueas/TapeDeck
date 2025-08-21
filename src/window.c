@@ -1,6 +1,7 @@
 #include "app.h"
 #include "utils.h"
 #include "consts.h"
+#include "info-box.h"
 #include "header.h"
 #include "window.h"
 
@@ -33,6 +34,7 @@ static void tpd_window_do_constructed(GObject* base) {
   GtkBox* mainBox = self->mainBox;
   GtkStack* mainStack = self->mainStack;
   TpdHeader* header = tpd_header_new();
+  TpdInfoBox* infoBox = tpd_info_box_new();
 
   g_object_set(listStack, "height-request", 400, NULL);
   gtk_stack_add_titled(listStack, GTK_WIDGET(queueView), "queue", "Now Playing");
@@ -46,8 +48,11 @@ static void tpd_window_do_constructed(GObject* base) {
   gtk_widget_set_margin_top(GTK_WIDGET(mainBox), 12);
   gtk_widget_set_margin_bottom(GTK_WIDGET(mainBox), 12);
   g_object_ref_sink(header);
+  g_object_ref_sink(infoBox);
   gtk_box_append(mainBox, GTK_WIDGET(header));
+  gtk_box_append(mainBox, GTK_WIDGET(infoBox));
   CLEAR(header);
+  CLEAR(infoBox);
 
   gtk_stack_add_named(mainStack, GTK_WIDGET(mainBox), "main_view");
 
