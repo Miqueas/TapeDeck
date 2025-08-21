@@ -5,10 +5,6 @@
 
 static gpointer tpd_app_parent_class = NULL;
 
-static void tpd_app_do_startup(GApplication *base);
-static void tpd_app_do_activate(GApplication *base);
-static GType tpd_app_get_type_once(void);
-
 TpdApp* tpd_app_new(void) {
   TpdApp *self = (TpdApp *) g_object_new(
     TPD_TYPE_APP,
@@ -43,10 +39,8 @@ static void tpd_app_do_startup(GApplication *base) {
 
 static void tpd_app_class_init(TpdAppClass *klass, gpointer _) {
 	tpd_app_parent_class = g_type_class_peek_parent(klass);
-	G_APPLICATION_CLASS(klass)->activate =
-    (void (*) (GApplication*)) tpd_app_do_activate;
-	G_APPLICATION_CLASS(klass)->startup =
-    (void (*) (GApplication*)) tpd_app_do_startup;
+	G_APPLICATION_CLASS(klass)->activate = tpd_app_do_activate;
+	G_APPLICATION_CLASS(klass)->startup = tpd_app_do_startup;
 }
 
 static GType tpd_app_get_type_once (void) {
