@@ -1,5 +1,5 @@
-#ifndef __CONSTS_H__
-#define __CONSTS_H__
+#ifndef __TPD_CONSTS_H__
+#define __TPD_CONSTS_H__
 
 #include <glib.h>
 

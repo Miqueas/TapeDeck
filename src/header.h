@@ -1,4 +1,9 @@
+#ifndef __TPD_HEADER_H__
+#define __TPD_HEADER_H__
+
 #include <adwaita.h>
+
+G_BEGIN_DECLS
 
 #define TPD_TYPE_HEADER (tpd_header_get_type())
 #define TPD_HEADER(obj) (G_TYPE_CHECK_INSTANCE_CAST((obj), TPD_TYPE_HEADER, TpdHeader))
@@ -25,3 +30,7 @@ struct _TpdHeaderClass {
 GType tpd_header_get_type(void) G_GNUC_CONST ;
 G_DEFINE_AUTOPTR_CLEANUP_FUNC(TpdHeader, g_object_unref)
 TpdHeader* tpd_header_new (void);
+
+G_END_DECLS
+
+#endif
