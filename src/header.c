@@ -3,10 +3,6 @@
 
 static gpointer tpd_header_parent_class = NULL;
 
-static void tpd_header_do_constructed(GObject* base);
-static void tpd_header_finalize(GObject* obj);
-static GType tpd_header_get_type_once(void);
-
 static void tpd_header_do_constructed(GObject* base) {
   TpdHeader* self = TPD_HEADER(base);
   GtkRevealer* revealer = self->revealer;
@@ -30,6 +26,13 @@ TpdHeader* tpd_header_new (void) {
   return self;
 }
 
+static void tpd_header_finalize (GObject* obj) {
+  TpdHeader* self = TPD_HEADER(obj);
+  CLEAR(self->revealer);
+  CLEAR(self->controls);
+  G_OBJECT_CLASS (tpd_header_parent_class)->finalize (obj);
+}
+
 static void tpd_header_class_init (TpdHeaderClass *klass, gpointer _) {
   tpd_header_parent_class = g_type_class_peek_parent(klass);
   G_OBJECT_CLASS(klass)->constructed = tpd_header_do_constructed;
@@ -45,13 +48,6 @@ static void tpd_header_instance_init (TpdHeader * self, gpointer klass) {
 
   self->revealer = GTK_REVEALER(revealer);
   self->controls = GTK_WINDOW_CONTROLS(controls);
-}
-
-static void tpd_header_finalize (GObject* obj) {
-  TpdHeader* self = TPD_HEADER(obj);
-  CLEAR(self->revealer);
-  CLEAR(self->controls);
-  G_OBJECT_CLASS (tpd_header_parent_class)->finalize (obj);
 }
 
 static GType tpd_header_get_type_once (void) {
