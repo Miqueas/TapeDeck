@@ -4,6 +4,7 @@ deps = [
 ]
 
 src = [
+  'info-box.c',
   'header.c',
   'window.c',
   'app.c',
