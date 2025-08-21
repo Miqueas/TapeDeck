@@ -1,5 +1,6 @@
 #include "utils.h"
 #include "consts.h"
+#include "time-box.h"
 #include "info-box.h"
 
 static gpointer tpd_info_box_parent_class = NULL;
@@ -23,7 +24,7 @@ static void tpd_info_box_do_constructed(GObject* base) {
   TpdInfoBox* self = TPD_INFO_BOX(base);
   GtkLabel* songTitle = self->songTitle;
   GtkLabel* songArtist = self->songArtist;
-  // TpdTimeBox* timeBox = self->timeBox;
+  TpdTimeBox* timeBox = self->timeBox;
   // TpdPlaybackBox* playbackBox = self->playbackBox;
   // TpdVolumeBox* volumeBox = self->volumeBox;
 
@@ -31,7 +32,7 @@ static void tpd_info_box_do_constructed(GObject* base) {
 
   gtk_box_append(GTK_BOX(self), GTK_WIDGET(songTitle));
   gtk_box_append(GTK_BOX(self), GTK_WIDGET(songArtist));
-  // gtk_box_append(GTK_BOX(self), GTK_WIDGET(timeBox));
+  gtk_box_append(GTK_BOX(self), GTK_WIDGET(timeBox));
   // gtk_box_append(GTK_BOX(self), GTK_WIDGET(playbackBox));
   // gtk_box_append(GTK_BOX(self), GTK_WIDGET(volumeBox));
 }
@@ -40,7 +41,7 @@ static void tpd_info_box_finalize(GObject * obj) {
   TpdInfoBox* self = TPD_INFO_BOX(obj);
   CLEAR(self->songTitle);
   CLEAR(self->songArtist);
-  // CLEAR(self->timeBox);
+  CLEAR(self->timeBox);
   // CLEAR(self->playbackBox);
   // CLEAR(self->volumeBox);
   G_OBJECT_CLASS(tpd_info_box_parent_class)->finalize(obj);
@@ -56,19 +57,19 @@ static void tpd_info_box_instance_init(TpdInfoBox* self, gpointer klass) {
   gchar* songTitleText = g_strdup_printf(TPD_SONG_TITLE_FORMAT, TPD_APP_TITLE);
   GtkWidget* songTitle = gtk_label_new(songTitleText);
   GtkWidget* songArtist = gtk_label_new(TPD_APP_PHRASE);
-  // TpdTimeBox* timeBox;
+  TpdTimeBox* timeBox = tpd_time_box_new();
   // TpdPlaybackBox* playbackBox;
   // TpdVolumeBox* volumeBox;
 
   g_object_ref_sink(songTitle);
   g_object_ref_sink(songArtist);
-  // g_object_ref_sink(timeBox);
+  g_object_ref_sink(timeBox);
   // g_object_ref_sink(playbackBox);
   // g_object_ref_sink(volumeBox);
 
   self->songTitle = GTK_LABEL(songTitle);
   self->songArtist = GTK_LABEL(songArtist);
-  // self->timeBox = timeBox;
+  self->timeBox = timeBox;
   // self->playbackBox = playbackBox;
   // self->volumeBox = volumeBox;
 

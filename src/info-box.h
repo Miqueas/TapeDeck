@@ -1,7 +1,7 @@
 #ifndef __TPD_INFO_BOX_H__
 #define __TPD_INFO_BOX_H__
 
-#include <gtk/gtk.h>
+#include "time-box.h"
 
 #define TPD_TYPE_INFO_BOX (tpd_info_box_get_type())
 #define TPD_INFO_BOX(obj) (G_TYPE_CHECK_INSTANCE_CAST((obj), TPD_TYPE_INFO_BOX, TpdInfoBox))
@@ -16,10 +16,10 @@ typedef struct _TpdInfoBoxPrivate TpdInfoBoxPrivate;
 
 struct _TpdInfoBox {
   GtkBox parent_instance;
-  TpdInfoBoxPrivate * priv;
+  TpdInfoBoxPrivate* priv;
   GtkLabel* songTitle;
   GtkLabel* songArtist;
-  // TpdTimeBox* timeBox;
+  TpdTimeBox* timeBox;
   // TpdPlaybackBox* playbackBox;
   // TpdVolumeBox* volumeBox;
 };
