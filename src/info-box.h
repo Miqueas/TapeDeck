@@ -15,17 +15,17 @@ typedef struct _TpdInfoBoxClass TpdInfoBoxClass;
 typedef struct _TpdInfoBoxPrivate TpdInfoBoxPrivate;
 
 struct _TpdInfoBox {
-	GtkBox parent_instance;
-	TpdInfoBoxPrivate * priv;
-	GtkLabel* songTitle;
-	GtkLabel* songArtist;
-	// TpdTimeBox* timeBox;
-	// TpdPlaybackBox* playbackBox;
-	// TpdVolumeBox* volumeBox;
+  GtkBox parent_instance;
+  TpdInfoBoxPrivate * priv;
+  GtkLabel* songTitle;
+  GtkLabel* songArtist;
+  // TpdTimeBox* timeBox;
+  // TpdPlaybackBox* playbackBox;
+  // TpdVolumeBox* volumeBox;
 };
 
 struct _TpdInfoBoxClass {
-	GtkBoxClass parent_class;
+  GtkBoxClass parent_class;
 };
 
 GType tpd_info_box_get_type(void) G_GNUC_CONST;
